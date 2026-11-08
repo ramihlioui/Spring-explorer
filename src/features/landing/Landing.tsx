@@ -1,0 +1,123 @@
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { figure, paths, topics } from "@/content";
+import { getT } from "@/lib/text";
+import { resolveExplorer, resolveUi } from "@/lib/resolve";
+import Explorer from "@/features/explorer/Explorer";
+import Icon from "@/components/Icon";
+import TopicIndex from "@/features/landing/TopicIndex";
+import SearchButton from "@/features/landing/SearchButton";
+
+const LAYERS: { key: "leaves" | "stem" | "roots" | "tools" | "plant"; links: [string, string][]; note?: boolean }[] = [
+  { key: "leaves", links: [["security", "security"], ["batch", "batch"], ["data", "data"], ["jpa", "jpa"], ["web", "web"], ["security", "authserver"], ["apidocs", "apidocs"]], note: true },
+  { key: "stem", links: [["boot", "boot"]] },
+  { key: "roots", links: [["spring", "spring"], ["injection", "injection"], ["beans", "beans"], ["config", "config"], ["errors", "errors"], ["transactions", "transactions"], ["testing", "testing"], ["runtime", "runtime"], ["patterns", "patterns"], ["troubleshooting", "troubleshooting"], ["compare", "compare"]] },
+  { key: "tools", links: [["tools", "lombok"], ["tools", "mapstruct"]] },
+  { key: "plant", links: [["capstone", "capstone"]] },
+];
+
+export default async function Landing({ locale }: { locale: string }) {
+  const t = await getT(locale);
+  const u = await getTranslations({ locale, namespace: "ui.landing" });
+  const raw = (k: string) => u.raw(k) as string;
+  const rows = u.raw("table.rows") as string[][];
+  const head = u.raw("table.head") as string[];
+  const list = topics.filter((x) => x.id !== "start").map((x) => ({ id: x.id, name: t(x.name), blurb: t(x.blurb) }));
+  const name = (id: string) => t(topics.find((x) => x.id === id)!.name);
+
+  return (
+    <section className="view">
+      <div className="hero">
+        <div className="hero-copy">
+          <h2>
+            {u("headA")} <span className="mark">{u("headMark")}</span> {u("headB")}
+          </h2>
+          <p className="lede">{u("lede")}</p>
+          <div className="hero-cta">
+            <Link className="btn primary lg" href="/spring">
+              <span>{u("cta")}</span>
+              <Icon name="arrow" />
+            </Link>
+            <SearchButton>{u("search")}</SearchButton>
+          </div>
+        </div>
+        <div className="hero-demo">
+          <Explorer id="seq-hero" cfg={resolveExplorer("seq-hero", t)} ui={resolveUi(t)} />
+        </div>
+      </div>
+
+      <div className="block">
+        <h3>{u("follow")}</h3>
+        <div className="paths">
+          {paths.map((p, i) => (
+            <div className="path" key={i}>
+              <h4>{t(p.n)}</h4>
+              <p>{t(p.d)}</p>
+              <ol>
+                {p.steps.map((s, x) => (
+                  <li key={s}>
+                    <Link href={`/${s}`}>
+                      <span>{x + 1}</span>
+                      <span>{name(s)}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="block">
+        <h3>{u("pick")}</h3>
+        <TopicIndex items={list} figures={figure} />
+      </div>
+
+      <div className="block">
+        <h3>{u("fits")}</h3>
+        <p className="why">{u("fitsWhy")}</p>
+        <div className="layers">
+          {LAYERS.map((l) => (
+            <div className="layer" key={l.key}>
+              <h4>
+                {u(`layers.${l.key}.name`)}
+                <small>{u(`layers.${l.key}.sub`)}</small>
+              </h4>
+              <div>
+                {l.links.map(([id, label]) => (
+                  <Link key={label} href={`/${id}`}>
+                    {u(`link.${label}`)}
+                  </Link>
+                ))}
+                {l.note && <em>{raw("layers.leaves.note")}</em>}
+              </div>
+            </div>
+          ))}
+        </div>
+        <details className="fold">
+          <summary>{u("compare")}</summary>
+          <div className="tbl-wrap">
+            <table>
+              <thead>
+                <tr>
+                  {head.map((h) => (
+                    <th key={h}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={i}>
+                    {r.map((c, x) => (
+                      <td key={x}>{c}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+  );
+}
