@@ -529,7 +529,7 @@ html{scrollbar-color:var(--mid) transparent}
 .topicmenu button:hover,.topicmenu a:hover{background:var(--surface2)}
 .topicmenu button b,.topicmenu a b{display:block;font-weight:600;color:var(--fg-strong);font-size:15px}
 .topicmenu button small,.topicmenu a small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
-.topicmenu button[aria-current="page"],.topicmenu a[aria-current="page"]{box-shadow:inset 2px 0 0 var(--accent);background:var(--accent-soft)}
+.topicmenu button[aria-current="page"],.topicmenu a[aria-current="page"]{background:var(--accent-soft)}
 @media (max-width:900px){.topicmenu{grid-template-columns:repeat(2,minmax(0,1fr));max-height:70vh;overflow:auto}}
 @media (max-width:640px){.topicmenu{grid-template-columns:minmax(0,1fr)}}
 
@@ -580,3 +580,55 @@ html{scroll-behavior:smooth}
   .seq-svgwrap.graph{overflow-x:auto}
   .seq-svgwrap.graph>svg{min-width:560px}
 }
+
+/* ---- animation polish ---- */
+.code .ln{transition:background-color .4s ease,border-color .4s ease,color .4s ease}
+.pk-t{fill:var(--accent);pointer-events:none}
+.pk-t.bad{fill:var(--bad)}
+.pk-lab{font-family:var(--sans);font-size:12px;font-weight:600;fill:var(--accent);paint-order:stroke;stroke:var(--plate);stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+.pk-lab.bad{fill:var(--bad)}
+.glab{transition:opacity .3s ease}
+svg.moving .glab{opacity:0}
+.over.enter .ov-t,.over.enter .ov-p,.over.enter .ov-route{animation:ovin .45s var(--spring) both}
+.over.enter .ov-route{animation-delay:.04s}.over.enter .ov-p{animation-delay:.08s}
+@keyframes ovin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* failure: stronger shake and a red ring on the node that failed */
+.gn.up.bad .shk{animation:shake .5s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{10%,90%{transform:translateX(-1px)}20%,80%{transform:translateX(3px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.gn.up.bad polygon.t,.gn.up.bad ellipse.t{animation:badflash .9s ease-out}
+@keyframes badflash{0%{fill:var(--bad-soft);stroke-width:2.4px}100%{stroke-width:inherit}}
+/* state changes: new chips pop, rolled-back rows rewind */
+.seq-state .st.fresh{animation:stamp .5s var(--spring)}
+@keyframes stamp{0%{transform:scale(1.35);opacity:0}100%{transform:none;opacity:1}}
+.seq-state .srow.fresh>span:first-child{animation:fade .4s ease}
+.seq-state .srow.fresh.bad{animation:rewind .8s ease-out}
+.seq-state .srow.fresh.bad>span:first-child{text-decoration:line-through;text-decoration-color:var(--bad)}
+@keyframes rewind{0%{transform:none;opacity:1}35%{transform:translateX(-10px);opacity:.45}100%{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .over.enter *,.gn.up.bad .shk,.gn.up.bad polygon.t,.seq-state .st.fresh,.seq-state .srow.fresh{animation:none!important}
+}
+.seq-state .srow:has(.st.bad)>span:first-child{text-decoration:line-through;text-decoration-color:var(--bad);color:var(--muted)}
+
+/* ---- landing revamp ---- */
+/* the hero explorer keeps its trail tabs but not the view switch or predict */
+.hero .seq.compact .xp-top{display:flex;padding:6px 8px 4px}
+.hero .seq.compact .tabs2,.hero .seq.compact .xp-tools{display:none}
+.ptabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--space-3)}
+.ptabs button{height:32px;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--fg-strong);transition:background .15s,border-color .15s}
+.ptabs button:hover{background:var(--surface2)}
+.ptabs button[aria-selected="true"]{background:var(--fg-strong);border-color:var(--fg-strong);color:var(--bg)}
+.ptab-desc{margin-top:var(--space-2);color:var(--muted);max-width:60ch}
+.toplist a.numbered{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"i n a" "i d a"}
+.toplist a.numbered .num{grid-area:i;font-style:normal;font-family:var(--display);font-weight:700;font-size:15px;color:var(--muted);width:2ch;align-self:start;padding-top:.7em;font-variant-numeric:tabular-nums}
+
+.pk-head{fill:none;stroke:var(--hi);stroke-width:1.6px;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;pointer-events:none}
+.pk-head.ok{stroke:var(--accent)}.pk-head.bad{stroke:var(--bad)}
+
+/* glossary terms */
+.term{position:relative;display:inline}
+.term-w{font:inherit;color:inherit;display:inline;padding:0;border:0;background:none;cursor:help;border-bottom:1.5px dotted var(--accent);text-decoration:none}
+.term-w:hover,.term-w[aria-expanded="true"]{color:var(--accent)}
+.term-card{position:absolute;z-index:25;top:calc(100% + 8px);left:0;width:min(300px,calc(100vw - 32px));display:flex;flex-direction:column;gap:6px;padding:12px 14px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r-inner);font-size:14px;line-height:1.5;font-weight:400;letter-spacing:0;text-align:left;color:var(--fg);animation:ovin .18s ease-out}
+.term-card b{font-family:var(--display);font-size:15px;color:var(--fg-strong)}
+.term-card .link{font-size:13.5px;width:fit-content}
+@media (prefers-reduced-motion:reduce){.term-card{animation:none}}

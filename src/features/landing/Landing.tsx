@@ -11,7 +11,7 @@ import SearchButton from "@/features/landing/SearchButton";
 const LAYERS: { key: "leaves" | "stem" | "roots" | "tools" | "plant"; links: [string, string][]; note?: boolean }[] = [
   { key: "leaves", links: [["security", "security"], ["batch", "batch"], ["data", "data"], ["jpa", "jpa"], ["web", "web"], ["security", "authserver"], ["apidocs", "apidocs"]], note: true },
   { key: "stem", links: [["boot", "boot"]] },
-  { key: "roots", links: [["spring", "spring"], ["injection", "injection"], ["beans", "beans"], ["config", "config"], ["errors", "errors"], ["transactions", "transactions"], ["testing", "testing"], ["runtime", "runtime"], ["patterns", "patterns"], ["troubleshooting", "troubleshooting"], ["compare", "compare"]] },
+  { key: "roots", links: [["spring", "spring"], ["injection", "injection"], ["beans", "beans"], ["aop", "aop"], ["config", "config"], ["errors", "errors"], ["transactions", "transactions"], ["testing", "testing"], ["runtime", "runtime"], ["patterns", "patterns"], ["troubleshooting", "troubleshooting"], ["compare", "compare"]] },
   { key: "tools", links: [["tools", "lombok"], ["tools", "mapstruct"]] },
   { key: "plant", links: [["capstone", "capstone"]] },
 ];
@@ -23,7 +23,6 @@ export default async function Landing({ locale }: { locale: string }) {
   const rows = u.raw("table.rows") as string[][];
   const head = u.raw("table.head") as string[];
   const list = topics.filter((x) => x.id !== "start").map((x) => ({ id: x.id, name: t(x.name), blurb: t(x.blurb) }));
-  const name = (id: string) => t(topics.find((x) => x.id === id)!.name);
 
   return (
     <section className="view">
@@ -47,30 +46,14 @@ export default async function Landing({ locale }: { locale: string }) {
       </div>
 
       <div className="block">
-        <h3>{u("follow")}</h3>
-        <div className="paths">
-          {paths.map((p, i) => (
-            <div className="path" key={i}>
-              <h4>{t(p.n)}</h4>
-              <p>{t(p.d)}</p>
-              <ol>
-                {p.steps.map((s, x) => (
-                  <li key={s}>
-                    <Link href={`/${s}`}>
-                      <span>{x + 1}</span>
-                      <span>{name(s)}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="block">
-        <h3>{u("pick")}</h3>
-        <TopicIndex items={list} figures={figure} />
+        <h3>{u("start")}</h3>
+        <p className="why">{u("startHint")}</p>
+        <TopicIndex
+          items={list}
+          paths={paths.map((p) => ({ name: t(p.n), desc: t(p.d), steps: p.steps }))}
+          figures={figure}
+          allLabel={u("allTopics")}
+        />
       </div>
 
       <div className="block">

@@ -28,6 +28,7 @@ export function resolveExplorer(id: string, t: T): ExplorerCfg {
   return {
     selector: e.selector,
     compact: e.compact,
+    cycle: e.cycle,
     autoplay: e.autoplay,
     loop: e.loop,
     scenarios,

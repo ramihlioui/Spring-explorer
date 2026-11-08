@@ -451,7 +451,43 @@
     },
     "flow3": {
      "t": "Quick check",
-     "s": "3 questions"
+     "s": "5 questions"
+    },
+    "items0": {
+     "t": "One chunk",
+     "s": "Read, process, write, commit"
+    },
+    "items1": {
+     "t": "ItemReader",
+     "s": "One item per call"
+    },
+    "items2": {
+     "t": "ItemProcessor",
+     "s": "Transform, filter, skip"
+    },
+    "items3": {
+     "t": "ItemWriter",
+     "s": "The whole chunk at once"
+    },
+    "items4": {
+     "t": "A write fails",
+     "s": "Rollback and skip"
+    },
+    "items5": {
+     "t": "Reader in depth",
+     "s": "State and restart"
+    },
+    "items6": {
+     "t": "Processor in depth",
+     "s": "Three outcomes"
+    },
+    "items7": {
+     "t": "Writer in depth",
+     "s": "Transactions and side effects"
+    },
+    "items8": {
+     "t": "Built-in classes",
+     "s": "Readers, processors, writers"
     }
    },
    "runtime": {
@@ -676,6 +712,55 @@
      "t": "Quick check",
      "s": "3 questions"
     }
+   },
+   "aop": {
+    "flow0": {
+     "t": "The problem",
+     "s": "Repeated code"
+    },
+    "flow1": {
+     "t": "Vocabulary",
+     "s": "Five words"
+    },
+    "flow2": {
+     "t": "Around advice",
+     "s": "Timing a method"
+    },
+    "flow3": {
+     "t": "Advice types",
+     "s": "Before, after, finally"
+    },
+    "flow4": {
+     "t": "When it throws",
+     "s": "AfterThrowing"
+    },
+    "flow5": {
+     "t": "Self-call trap",
+     "s": "The aspect is skipped"
+    },
+    "flow6": {
+     "t": "Pointcuts",
+     "s": "Choosing methods"
+    },
+    "flow7": {
+     "t": "Turn it on",
+     "s": "Dependency and setup"
+    },
+    "flow8": {
+     "t": "You already use it",
+     "s": "Transactions, cache, async"
+    },
+    "flow9": {
+     "t": "Limits",
+     "s": "What it cannot do"
+    },
+    "flow10": {
+     "t": "Quick check",
+     "s": "3 questions"
+    },
+    "name": "AOP",
+    "sub": "Aspects, advice and proxies",
+    "blurb": "How Spring adds logging, timing and security around your methods without changing them."
    }
   },
   "group": {
@@ -719,7 +804,8 @@
    "patterns": "Behind Spring's magic are eight old design patterns.",
    "troubleshooting": "Every Spring error message points at a cause. Learn to read it.",
    "apidocs": "Your API can describe itself, and a repository can become an endpoint.",
-   "compare": "If you know Express, Django or .NET, you already know most of Spring."
+   "compare": "If you know Express, Django or .NET, you already know most of Spring.",
+   "aop": "AOP adds behaviour around your methods without touching them."
   },
   "v": {
    "spring": {
@@ -756,12 +842,12 @@
     "30": "Wraps the method: begin, run, commit, or roll back on exception.",
     "31": "A wrapper: begin, run, commit or roll back",
     "32": "What @Transactional really does",
-    "33": "Spring does not change your method. It hands callers a wrapper object (a proxy) that runs your method between begin and commit.",
+    "33": "Spring does not change your method. It hands callers a wrapper object (a <term k=\"proxy\">proxy</term>) that runs your method between begin and commit.",
     "34": "Your Java",
     "35": "What the proxy does, as pseudocode",
     "36": "One consequence that surprises people: calling a @Transactional method from another method in the same class skips the wrapper, because the call never goes through the proxy.",
     "h2": "Spring builds your objects so you never call <code>new</code>.",
-    "sub": "A Java class says what it needs in its constructor. At startup, Spring finds every class marked as a component, creates them in the right order, and passes each one what it asked for. This is dependency injection, and the container that holds the results is the ApplicationContext."
+    "sub": "A Java class says what it needs in its constructor. At startup, Spring finds every class marked as a <term k=\"component\">component</term>, creates them in the right order, and passes each one what it asked for. This is <term k=\"di\">dependency injection</term>, and the container that holds the results is the <term k=\"context\">ApplicationContext</term>."
    },
    "boot": {
     "0": "Add a starter, get the beans",
@@ -769,7 +855,7 @@
     "2": "Follow one HTTP request",
     "3": "Your Client app calls <code>fetch('/api/orders/42')</code>. Step through what happens on the Java side. Each node is a bean or a framework component, and the highlighted lines are the code involved.",
     "4": "Configuration lives in application.yml",
-    "5": "This is the file that decides ports, database URLs and feature flags. Profiles give you one file per environment.",
+    "5": "This is the file that decides ports, database URLs and feature flags. <term k=\"profile\">Profiles</term> give you one file per environment.",
     "6": "application.yml",
     "7": "What each setting does",
     "8": "application.yml",
@@ -785,7 +871,7 @@
     "18": "java -jar app.jar",
     "19": "Runs the packaged app, with Tomcat inside",
     "h2": "Boot is Spring with the decisions already made.",
-    "sub": "Plain Spring needs XML or Java config for every piece. Boot looks at which libraries are on the classpath and configures them for you, then lets your own beans override anything."
+    "sub": "Plain Spring needs XML or Java config for every piece. Boot looks at which libraries are on the classpath and configures them for you, then lets your own <term k=\"bean\">beans</term> override anything."
    },
    "security": {
     "0": "Send a request through the chain",
@@ -841,7 +927,7 @@
     "50": "\"I know who you are, and the answer is no.\" Logging in again will not help.",
     "51": "<b>The client should:</b> show a \"you do not have access\" screen. Do not redirect to login.",
     "52": "The configuration behind the chain",
-    "53": "You declare the chain once as a bean. The rules at the bottom are what the AuthorizationFilter reads, top to bottom, first match wins.",
+    "53": "You declare the chain once as a <term k=\"bean\">bean</term>. The rules at the bottom are what the AuthorizationFilter reads, top to bottom, first match wins.",
     "54": "Two words people mix up",
     "55": "Term",
     "56": "Question it answers",
@@ -885,7 +971,89 @@
     "17": "Job parameters",
     "18": "A job instance is identified by its parameters (for example <code>file=customers-2026-11.csv</code>). Run the same parameters again after a success and Batch refuses. After a failure, it resumes.",
     "h2": "Batch moves big data in chunks, and remembers where it stopped.",
-    "sub": "Think of importing a 5-million-row CSV. One giant transaction would run out of memory and lose everything on the first bad row. Batch reads and processes items one at a time, writes them in small chunks, and records progress in database tables so a failed job can resume."
+    "sub": "Think of importing a 5-million-row CSV. One giant <term k=\"transaction\">transaction</term> would run out of memory and lose everything on the first bad row. Batch reads and processes items one at a time, writes them in small chunks, and records progress in database tables so a failed job can resume.",
+    "items0": "Every chunk runs the same loop: read one item, process it, repeat until the chunk is full, then write them all together. Pick a trail to zoom in on one worker. The chunk size here is 2 so the whole loop fits on screen.",
+    "items1": "Reader, processor and writer, step by step",
+    "items2": "The reader has the smallest contract of the three: return the next item, or <code>null</code> when there is nothing left. Everything else is its own business: opening the file, buffering, paging, and remembering how far it got.",
+    "items3": "The interface, and a CSV reader",
+    "items4": "It is stateful",
+    "items5": "A reader keeps a cursor, so one instance must not be shared between threads unless it is built for that. Database readers come in a restart-safe paging flavour and a faster single-thread cursor flavour.",
+    "items6": "Its name is how restart works",
+    "items7": "On commit the reader writes its position into the ExecutionContext under its name. Without a stable name there is nothing to find on restart, and a failed job would begin at record 1 again.",
+    "items8": "ItemReader: one item per call",
+    "items9": "The processor sees one item at a time and returns something for the writer. It is optional, but it is the right home for cleaning, converting, validating and deciding to skip. It has exactly three possible outcomes.",
+    "items10": "A processor that cleans, filters and validates",
+    "items11": "Outcome",
+    "items12": "You write",
+    "items13": "Batch does",
+    "items14": "Counted as",
+    "items15": "Return an item",
+    "items16": "return customer;",
+    "items17": "Adds it to the chunk for the writer",
+    "items18": "WRITE_COUNT, after the commit",
+    "items19": "Return null",
+    "items20": "return null;",
+    "items21": "Drops the item quietly, no error",
+    "items22": "FILTER_COUNT",
+    "items23": "Throw an exception",
+    "items24": "throw new X();",
+    "items25": "Fails the step, or skips or retries it if you configured that",
+    "items26": "SKIP_COUNT, or a rollback",
+    "items27": "Keep processors free of slow work. Calling a remote API for every item is the most common reason an import crawls. Preload a lookup table, or batch the calls in the writer instead.",
+    "items28": "ItemProcessor: where your business rules live",
+    "items29": "The writer is called once per chunk, never once per item, and receives every processed item as a single list. That is what makes batch inserts, bulk API calls and single file flushes possible.",
+    "items30": "The interface, and a JDBC batch writer",
+    "items31": "It shares the chunk's transaction",
+    "items32": "A database writer runs inside the chunk transaction, so a failure <term k=\"rollback\">rolls back</term> every row of the chunk together. That is also why a bad row can cost a whole chunk.",
+    "items33": "External writes cannot be undone",
+    "items34": "A writer that sends emails or calls a REST API cannot be rolled back. If the chunk is retried, those effects can happen twice, so make them safe to repeat, for example with an idempotency key.",
+    "items35": "ItemWriter: the whole chunk at once",
+    "items36": "Most jobs combine ready-made classes. You write the processor, and sometimes nothing else.",
+    "items37": "Role",
+    "items38": "Class",
+    "items39": "Handles",
+    "items40": "Good to know",
+    "items41": "Reader",
+    "items42": "FlatFileItemReader",
+    "items43": "CSV and fixed-width files",
+    "items44": "Skips header lines, maps columns to a type",
+    "items45": "Reader",
+    "items46": "JdbcPagingItemReader",
+    "items47": "A database, one page at a time",
+    "items48": "Restart-safe, works with several threads",
+    "items49": "Reader",
+    "items50": "JdbcCursorItemReader",
+    "items51": "A database through one cursor",
+    "items52": "Fast, but single-threaded",
+    "items53": "Reader",
+    "items54": "JpaPagingItemReader",
+    "items55": "JPA entities from a query",
+    "items56": "One query per page",
+    "items57": "Processor",
+    "items58": "CompositeItemProcessor",
+    "items59": "A chain of processors",
+    "items60": "Output of one becomes input of the next",
+    "items61": "Processor",
+    "items62": "ValidatingItemProcessor",
+    "items63": "Bean validation or a custom validator",
+    "items64": "Throws on invalid items",
+    "items65": "Writer",
+    "items66": "JdbcBatchItemWriter",
+    "items67": "SQL inserts and updates",
+    "items68": "Named parameters, one JDBC batch per chunk",
+    "items69": "Writer",
+    "items70": "JpaItemWriter",
+    "items71": "JPA entities",
+    "items72": "Persists or merges each item",
+    "items73": "Writer",
+    "items74": "FlatFileItemWriter",
+    "items75": "CSV and text files",
+    "items76": "Header and footer callbacks",
+    "items77": "Writer",
+    "items78": "CompositeItemWriter",
+    "items79": "Several writers in turn",
+    "items80": "Save to the database and a file together",
+    "items81": "Readers, processors and writers you get for free"
    },
    "beans": {
     "0": "The stereotype family",
@@ -920,7 +1088,7 @@
     "29": "Business logic",
     "30": "It wires things. It does not run workflows.",
     "31": "Follow one bean from birth to shutdown",
-    "32": "The order below is fixed by Spring. Knowing it explains why @PostConstruct cannot use @Transactional, and why other beans get a proxy instead of your object.",
+    "32": "The order below is fixed by Spring. Knowing it explains why @PostConstruct cannot use @Transactional, and why other beans get a <term k=\"proxy\">proxy</term> instead of your object.",
     "33": "Scopes: how many instances",
     "34": "Scope",
     "35": "Instances",
@@ -1024,7 +1192,7 @@
     "57": "Test the rollback",
     "58": "Write an integration test that forces the exception and asserts the rows are gone. Rollback bugs are easy to introduce and hard to notice.",
     "h2": "A transaction makes several database changes succeed or fail together.",
-    "sub": "Placing an order inserts a row, lowers the stock, and records a payment. If the payment fails, the first two must disappear. In Spring you add @Transactional to the method and a proxy handles begin, commit and rollback around it."
+    "sub": "Placing an order inserts a row, lowers the stock, and records a payment. If the payment fails, the first two must disappear. In Spring you add @Transactional to the method and a <term k=\"proxy\">proxy</term> handles begin, commit and rollback around it."
    },
    "patterns": {
     "h2": "Spring is a catalogue of classic patterns with annotations on top.",
@@ -1072,7 +1240,7 @@
     "38": "No, needs reflection or a Spring test",
     "39": "Avoid",
     "40": "@RequiredArgsConstructor, explained",
-    "41": "\"Required args\" means the fields a constructor cannot do without: every <code>final</code> field that has no value yet, plus any field marked <code>@NonNull</code>. Fields that are not final are skipped. Lombok writes that constructor at compile time, and Spring injects through it as usual.",
+    "41": "\"Required args\" means the fields a constructor cannot do without: every <code>final</code> field that has no value yet, plus any field marked <code>@NonNull</code>. Fields that are not final are skipped. <term k=\"lombok\">Lombok</term> writes that constructor at compile time, and Spring injects through it as usual.",
     "42": "What you write",
     "43": "What Lombok adds to the compiled class",
     "44": "With exactly one constructor, Spring uses it automatically. Writing <code>@Autowired</code> on it is allowed but no longer needed since Spring 4.3.",
@@ -1102,7 +1270,7 @@
     "68": "Standard Jakarta versions. <code>@Resource</code> looks for a bean by name first.",
     "69": "<code>@Resource PaymentClient paymentClient</code>",
     "70": "Injecting every bean of a type",
-    "71": "Ask for a collection and Spring passes all matching beans. A map is keyed by bean name. This is how plug-in style designs work.",
+    "71": "Ask for a collection and Spring passes all matching <term k=\"bean\">beans</term>. A map is keyed by bean name. This is how plug-in style designs work.",
     "h2": "Dependency injection means a class asks for what it needs, and Spring hands it over.",
     "sub": "A class rarely works alone. An <code>OrderService</code> needs a <code>PaymentClient</code> to charge cards and an <code>OrderRepository</code> to save rows. Injection is the habit of receiving those helpers from outside instead of creating them inside. Spring is the one that does the handing over, and there are several ways to ask for it."
    },
@@ -1381,7 +1549,7 @@
     "108": "Your own code",
     "109": "A few fields, or transformations MapStruct cannot express.",
     "h2": "Lombok and MapStruct write the repetitive Java for you, at compile time.",
-    "sub": "Neither is part of Spring, but almost every Spring project uses them. Lombok removes boilerplate inside a class: getters, constructors, builders, loggers. MapStruct writes the code that copies data from one class to another, such as an entity to a DTO. Both work while the project compiles, so the generated code is plain Java at runtime."
+    "sub": "Neither is part of Spring, but almost every Spring project uses them. Lombok removes boilerplate inside a class: getters, constructors, builders, loggers. MapStruct writes the code that copies data from one class to another, such as an entity to a <term k=\"dto\">DTO</term>. Both work while the project compiles, so the generated code is plain Java at runtime."
    },
    "jpa": {
     "0": "Watch the persistence context work",
@@ -1443,7 +1611,7 @@
     "56": "Pagination and sorting",
     "57": "Never load a whole table into memory. Pass a <code>Pageable</code> and Spring Data adds the sort, the limit and a count query.",
     "h2": "Hibernate keeps a copy of everything it loaded, and that explains most JPA surprises.",
-    "sub": "A repository hides Hibernate, but Hibernate is still doing the work. Inside a transaction it keeps a persistence context: every entity you load or save lives there, and changes are written out when the transaction commits. Once you see that, dirty checking, lazy loading and the N+1 problem stop being mysterious."
+    "sub": "A repository hides Hibernate, but Hibernate is still doing the work. Inside a <term k=\"transaction\">transaction</term> it keeps a persistence context: every entity you load or save lives there, and changes are written out when the transaction commits. Once you see that, dirty checking, lazy loading and the N+1 problem stop being mysterious."
    },
    "testing": {
     "0": "See what each kind of test starts",
@@ -1483,7 +1651,7 @@
     "34": "Real databases",
     "35": "An embedded database is fast but can differ from production. Testcontainers runs the real database in a container for the tests that need it.",
     "h2": "Test the slice you changed, not the whole application.",
-    "sub": "Starting every bean for every test is slow. Spring Boot offers test slices that load only one layer: the web layer, the data layer, or everything. Pick the smallest one that can answer your question, and mock what sits outside it."
+    "sub": "Starting every <term k=\"bean\">bean</term> for every test is slow. Spring Boot offers test slices that load only one layer: the web layer, the data layer, or everything. Pick the smallest one that can answer your question, and mock what sits outside it."
    },
    "errors": {
     "0": "Follow an exception back to the client",
@@ -1524,7 +1692,7 @@
    },
    "config": {
     "0": "Watch one setting being resolved",
-    "1": "A bean asks for <code>shop.currency</code>. See which sources are consulted and in what order, then run the same lookup without the prod profile.",
+    "1": "A <term k=\"bean\">bean</term> asks for <code>shop.currency</code>. See which sources are consulted and in what order, then run the same lookup without the prod profile.",
     "2": "The order, highest priority first",
     "3": "This is a simplified list. The full order in the Spring Boot reference has more entries, but these are the ones you will use.",
     "4": "Source",
@@ -1584,7 +1752,7 @@
     "24": "Cache, async and schedule",
     "25": "A health indicator of your own",
     "h2": "Add a cache, a background thread or a timer with one annotation each.",
-    "sub": "These features all use the same trick as <code>@Transactional</code>: Spring wraps your bean in a proxy that adds behaviour before and after the call. That also means they share the same trap, which is calling the method from inside the same class."
+    "sub": "These features all use the same trick as <code>@Transactional</code>: Spring wraps your <term k=\"bean\">bean</term> in a <term k=\"proxy\">proxy</term> that adds behaviour before and after the call. That also means they share the same trap, which is calling the method from inside the same class."
    },
    "capstone": {
     "0": "POST /api/orders, end to end",
@@ -1622,7 +1790,7 @@
     "1": "Four failures, step by step",
     "2": "Spring wraps one exception inside another, so the first line is only the outer layer. Find the last <code>Caused by</code>: that is the root cause.",
     "3": "A real trace, shortened",
-    "4": "The top says <i>where</i> Spring gave up (creating <code>orderService</code>). The bottom says <i>why</i> (no bean of type <code>PaymentClient</code>). Fix the bottom.",
+    "4": "The top says <i>where</i> Spring gave up (creating <code>orderService</code>). The bottom says <i>why</i> (no <term k=\"bean\">bean</term> of type <code>PaymentClient</code>). Fix the bottom.",
     "5": "Read a stack trace from the bottom",
     "6": "Error",
     "7": "Usual cause",
@@ -1747,6 +1915,77 @@
     "61": "What feels different at first",
     "h2": "If you know Express, Django or .NET, you already know most of Spring.",
     "sub": "Spring uses different words for ideas you have met before. This page maps each Spring concept to its counterpart in other popular stacks, so you can borrow what you know."
+   },
+   "aop": {
+    "0": "Timing a method is easy. Timing forty of them, and keeping all forty in step, is not. Code that cuts across many classes like this is called a <i>cross-cutting concern</i>.",
+    "1": "Without AOP",
+    "2": "With AOP",
+    "3": "The problem: the same lines in every method",
+    "4": "The vocabulary is the hardest part. Each word has one job.",
+    "5": "Word",
+    "6": "Meaning",
+    "7": "In this page",
+    "8": "Aspect",
+    "9": "A class that holds a cross-cutting behaviour",
+    "10": "TimingAspect",
+    "11": "Join point",
+    "12": "A moment you can hook into. In Spring AOP it is always a method call",
+    "13": "OrderService.place()",
+    "14": "Pointcut",
+    "15": "An expression that selects which join points to wrap",
+    "16": "execution(* com.shop.service.*.*(..))",
+    "17": "Advice",
+    "18": "The code that runs at a join point, and when: before, after or around",
+    "19": "the time() method",
+    "20": "Target",
+    "21": "The real bean being wrapped, which stays unaware of it",
+    "22": "OrderService",
+    "23": "Weaving is the word for applying aspects to <term k=\"bean\">beans</term>. Spring AOP does it at startup, by replacing each matching bean with a proxy.",
+    "24": "Five words that make AOP readable",
+    "25": "Pick a trail. The first shows the most powerful kind of advice. The others show the order of the other kinds, what happens on failure, and the one mistake almost everybody makes once.",
+    "26": "Watch an aspect wrap a method",
+    "27": "A pointcut is a small expression. Start with <code>execution</code>, and reach for the others when you need them.",
+    "28": "Expression",
+    "29": "Matches",
+    "30": "execution(* com.shop.service.*.*(..))",
+    "31": "Any method of any class directly in com.shop.service",
+    "32": "execution(public * *(..))",
+    "33": "Any public method",
+    "34": "@annotation(com.shop.Audited)",
+    "35": "Methods you marked with your own @Audited annotation",
+    "36": "within(com.shop.web..*)",
+    "37": "Every method inside com.shop.web and its subpackages",
+    "38": "bean(*Service)",
+    "39": "Any bean whose name ends in Service",
+    "40": "A custom annotation such as <code>@Audited</code> is usually the clearest choice: the method says it wants the behaviour, and the aspect never needs to know package names.",
+    "41": "Pointcuts: choosing which methods",
+    "42": "Turning it on",
+    "43": "Several annotations you have met are aspects in disguise. Each one is advice, wrapped around your method by a proxy.",
+    "44": "Annotation",
+    "45": "Advice behind it",
+    "46": "Kind",
+    "47": "@Transactional",
+    "48": "TransactionInterceptor: begin, commit or roll back",
+    "49": "Around",
+    "50": "@Cacheable",
+    "51": "CacheInterceptor: return a stored value or call through",
+    "52": "Around",
+    "53": "@Async",
+    "54": "AsyncExecutionInterceptor: hand the call to another thread",
+    "55": "Around",
+    "56": "@PreAuthorize",
+    "57": "A method security interceptor: check the caller first",
+    "58": "Before",
+    "59": "You already use AOP",
+    "60": "Only Spring beans, only method calls",
+    "61": "Spring AOP wraps beans with proxies, so it cannot intercept private methods, constructors, fields, or objects created with new. Full AspectJ weaving can, at the cost of a build step.",
+    "62": "Self-calls skip the aspect",
+    "63": "A method calling another method on this never passes through the proxy. Move the second method to another bean and inject it.",
+    "64": "Final classes cannot be proxied",
+    "65": "Spring subclasses a class to proxy it unless it implements an interface. A final class or method cannot be overridden, so the advice is silently missing.",
+    "66": "What Spring AOP cannot do",
+    "h2": "AOP adds behaviour around your methods without touching them.",
+    "sub": "Logging, timing, security and <term k=\"transaction\">transactions</term> are needed in many places and belong in none of them. An aspect writes that code once, and Spring wraps the right methods with it through a <term k=\"proxy\">proxy</term>."
    }
   },
   "ex": {
@@ -2298,7 +2537,7 @@
      },
      "s2": {
       "label": "chain passes",
-      "note": "CORS, authentication, logging. Each filter can stop the request. This is where Spring Security lives. See the Security tab."
+      "note": "CORS, authentication, logging. Each filter can stop the request. This is where Spring Security lives. See the Security topic."
      },
      "s3": {
       "label": "find handler",
@@ -2336,7 +2575,7 @@
    },
    "seq-hero": {
     "http": {
-     "label": "GET /api/orders/42",
+     "label": "One request",
      "s0": {
       "label": "GET /api/orders/42",
       "note": "A client, here a browser app, sends a plain HTTP request to port 8080. Nothing Java-specific yet."
@@ -2347,7 +2586,7 @@
      },
      "s2": {
       "label": "chain passes",
-      "note": "CORS, authentication, logging. Each filter can stop the request. This is where Spring Security lives. See the Security tab."
+      "note": "CORS, authentication, logging. Each filter can stop the request. This is where Spring Security lives. See the Security topic."
      },
      "s3": {
       "label": "find handler",
@@ -2381,6 +2620,12 @@
       "label": "200 + JSON",
       "note": "Jackson serializes the DTO, Spring sets the status and content type, and Tomcat sends the bytes."
      }
+    },
+    "rollback": {
+     "label": "Transaction rollback"
+    },
+    "jwt": {
+     "label": "JWT login"
     }
    },
    "seq-auth": {
@@ -4386,6 +4631,403 @@
       "note": "A complete, browsable API from two lines of code. Use projections to avoid exposing every field."
      }
     }
+   },
+   "seq-items": {
+    "chunk": {
+     "label": "One chunk",
+     "s0": {
+      "label": "BEGIN tx-1",
+      "note": "The step opens one transaction for the whole chunk. Everything below happens inside it.",
+      "badge": {
+       "Step": "buffer 0 of 2"
+      }
+     },
+     "s1": {
+      "label": "read()",
+      "note": "The step asks the reader for the next item."
+     },
+     "s2": {
+      "label": "row 1",
+      "note": "The reader returns exactly one item and remembers where it is.",
+      "badge": {
+       "ItemReader": "at record 1"
+      }
+     },
+     "s3": {
+      "label": "process(row 1)",
+      "note": "The item goes through the processor on its own, before the next one is read."
+     },
+     "s4": {
+      "label": "Customer 1",
+      "note": "Cleaned and converted. It is held in memory. Nothing has been saved.",
+      "badge": {
+       "Step": "buffer 1 of 2"
+      }
+     },
+     "s5": {
+      "label": "read()",
+      "note": "Still below the chunk size, so the loop continues."
+     },
+     "s6": {
+      "label": "row 2",
+      "note": "The second item.",
+      "badge": {
+       "ItemReader": "at record 2"
+      }
+     },
+     "s7": {
+      "label": "process(row 2)",
+      "note": "Same processor, next item."
+     },
+     "s8": {
+      "label": "Customer 2",
+      "note": "The buffer is now full: two converted items.",
+      "badge": {
+       "Step": "buffer 2 of 2"
+      }
+     },
+     "s9": {
+      "label": "write(chunk of 2)",
+      "note": "Only now does the writer run, and it gets both items as one list."
+     },
+     "s10": {
+      "label": "INSERT 2 rows (one batch)",
+      "note": "One round trip for the whole chunk, still inside tx-1."
+     },
+     "s11": {
+      "label": "COMMIT tx-1",
+      "note": "Both rows become visible together, and the reader position is saved in the same commit. Then the loop starts again with an empty buffer.",
+      "badge": {
+       "Step": "buffer 0 of 2"
+      }
+     }
+    },
+    "reader": {
+     "label": "ItemReader",
+     "s0": {
+      "label": "open(executionContext)",
+      "note": "Before the first chunk the step opens the reader and hands it the saved ExecutionContext. On a first run it is empty. After a failure it holds the position."
+     },
+     "s1": {
+      "label": "open, skip header",
+      "note": "The reader opens customers.csv and skips the header line."
+     },
+     "s2": {
+      "label": "read()",
+      "note": "The step asks for one item."
+     },
+     "s3": {
+      "label": "next line",
+      "note": "Only one line is read, never the whole file. That is why a 5-million-row file fits in memory."
+     },
+     "s4": {
+      "label": "1,Amina,amina@mail.tn",
+      "note": "The raw text of one line."
+     },
+     "s5": {
+      "label": "map line to CsvRow",
+      "note": "The line is split into columns and mapped onto the target type."
+     },
+     "s6": {
+      "label": "CsvRow(1, Amina)",
+      "note": "One typed item goes back. The reader keeps its own count of how many it has returned.",
+      "badge": {
+       "ItemReader": "read.count = 1"
+      }
+     },
+     "s7": {
+      "label": "update(executionContext)",
+      "note": "Before each commit the step asks the reader to write its position down."
+     },
+     "s8": {
+      "label": "csvReader.read.count = 2",
+      "note": "The position is stored under the reader's name. This is why name() is required for restart.",
+      "badge": {
+       "ExecutionContext": "read.count = 2"
+      }
+     },
+     "s9": {
+      "label": "saved with the commit",
+      "note": "The context is written to the metadata tables in the same transaction as the chunk, so progress and data can never disagree."
+     },
+     "s10": {
+      "label": "read()",
+      "note": "After the last line has been returned, the step asks once more."
+     },
+     "s11": {
+      "label": "null",
+      "note": "Returning null is how a reader says the input is finished. The step ends the loop and finishes."
+     }
+    },
+    "processor": {
+     "label": "ItemProcessor",
+     "stateTitle": "Items handed to the writer",
+     "s0": {
+      "label": "process(row 1)",
+      "note": "Row 1 is Amina, with the email AMINA@MAIL.TN."
+     },
+     "s1": {
+      "label": "validate",
+      "note": "The processor applies your rules to this one item."
+     },
+     "s2": {
+      "label": "ok",
+      "note": "The email is present and well formed."
+     },
+     "s3": {
+      "label": "Customer(amina@mail.tn)",
+      "note": "Trimmed and lower-cased, as a new Customer. The item is added to the chunk.",
+      "add": "Customer amina@mail.tn"
+     },
+     "s4": {
+      "label": "process(row 4)",
+      "note": "Row 4 is Ines, with a blank email."
+     },
+     "s5": {
+      "label": "validate",
+      "note": "The rules check the email."
+     },
+     "s6": {
+      "label": "email is blank",
+      "note": "Blank is not an error in this import. It is a row we do not want."
+     },
+     "s7": {
+      "label": "null",
+      "note": "Returning null filters the item out. It never reaches the writer, FILTER_COUNT goes up, and nothing fails."
+     },
+     "s8": {
+      "label": "process(row 8)",
+      "note": "Row 8 has the email karim@, which is malformed."
+     },
+     "s9": {
+      "label": "validate",
+      "note": "The rules check the email."
+     },
+     "s10": {
+      "label": "no domain",
+      "note": "This one is a genuine mistake in the data."
+     },
+     "s11": {
+      "label": "throws ValidationException",
+      "note": "An exception is not the same as null. With skip(ValidationException) configured the item is skipped and counted. Without it, the step fails and the chunk rolls back."
+     },
+     "s12": {
+      "label": "skip policy: skip it",
+      "note": "The step is configured to skip this exception, so it records SKIP_COUNT and carries on with the next item."
+     }
+    },
+    "writer": {
+     "label": "ItemWriter",
+     "s0": {
+      "label": "BEGIN tx-1",
+      "note": "A transaction is already open for this chunk. The writer will join it."
+     },
+     "s1": {
+      "label": "write(chunk of 3)",
+      "note": "The writer receives all three processed items as one Chunk. It is never called once per item."
+     },
+     "s2": {
+      "label": "bind :name, :email",
+      "note": "For each item the named parameters are filled from its getters."
+     },
+     "s3": {
+      "label": "INSERT 3 rows (one batch)",
+      "note": "The three statements travel together in a single JDBC batch, which is much faster than three round trips."
+     },
+     "s4": {
+      "label": "3 rows affected",
+      "note": "The database confirms the batch."
+     },
+     "s5": {
+      "label": "done",
+      "note": "Control returns. Nothing is permanent yet."
+     },
+     "s6": {
+      "label": "COMMIT tx-1",
+      "note": "The whole chunk becomes visible at once. A database writer shares this transaction, so if anything above had failed, none of it would have been saved."
+     }
+    },
+    "writefail": {
+     "label": "A write fails",
+     "s0": {
+      "label": "BEGIN tx-1",
+      "note": "The usual start of a chunk."
+     },
+     "s1": {
+      "label": "write(chunk of 3)",
+      "note": "Three items go to the writer."
+     },
+     "s2": {
+      "label": "INSERT 3 rows (one batch)",
+      "note": "The batch is sent."
+     },
+     "s3": {
+      "label": "duplicate key",
+      "note": "The second item breaks a unique constraint, so the whole batch fails."
+     },
+     "s4": {
+      "label": "throws DataIntegrityViolationException",
+      "note": "The exception reaches the step."
+     },
+     "s5": {
+      "label": "ROLLBACK tx-1",
+      "note": "The chunk is undone, including the two good rows. Batch cannot yet tell which item is at fault."
+     },
+     "s6": {
+      "label": "scan: write one at a time",
+      "note": "Because the step is fault tolerant and this exception is skippable, Batch retries the same items one per transaction to find the culprit."
+     },
+     "s7": {
+      "label": "BEGIN tx-2",
+      "note": "A new, tiny transaction for item 1 alone."
+     },
+     "s8": {
+      "label": "INSERT item 1",
+      "note": "Item 1 is fine on its own."
+     },
+     "s9": {
+      "label": "COMMIT tx-2",
+      "note": "Item 1 is saved."
+     },
+     "s10": {
+      "label": "item 2 fails alone: skip it",
+      "note": "Item 2 fails again on its own, so it is skipped and counted in SKIP_COUNT. Item 3 is then written the same way. The job carries on instead of failing."
+     }
+    }
+   },
+   "seq-aop": {
+    "around": {
+     "label": "Around advice",
+     "s0": {
+      "label": "place(request)",
+      "note": "The caller holds a proxy, not the real OrderService. From its side the call looks completely normal."
+     },
+     "s1": {
+      "label": "match the pointcut",
+      "note": "The proxy checks which advice applies to this method. The expression execution(* com.shop.service.*.*(..)) matches, so TimingAspect is in play."
+     },
+     "s2": {
+      "label": "time(joinPoint)",
+      "note": "The @Around advice runs first. It receives a ProceedingJoinPoint: a handle on the real call."
+     },
+     "s3": {
+      "label": "start the clock",
+      "note": "Everything before proceed() runs before the real method."
+     },
+     "s4": {
+      "label": "joinPoint.proceed()",
+      "note": "The advice decides when, and whether, the real method runs. Forget to call proceed() and the method never executes."
+     },
+     "s5": {
+      "label": "Order",
+      "note": "The real method finishes and returns its normal result."
+     },
+     "s6": {
+      "label": "log the duration",
+      "note": "The finally block runs whether the method returned or threw."
+     },
+     "s7": {
+      "label": "Order",
+      "note": "The advice returns what proceed() returned. It could also change it."
+     },
+     "s8": {
+      "label": "Order",
+      "note": "The caller gets its result and never knew a second class was involved. OrderService contains no timing code at all."
+     }
+    },
+    "advice": {
+     "label": "Advice types",
+     "s0": {
+      "label": "place(request)",
+      "note": "A normal call through the proxy."
+     },
+     "s1": {
+      "label": "@Before",
+      "note": "Runs before the method. It cannot stop the call, unless it throws."
+     },
+     "s2": {
+      "label": "place(request)",
+      "note": "Now the real method runs."
+     },
+     "s3": {
+      "label": "Order",
+      "note": "The method returns normally."
+     },
+     "s4": {
+      "label": "@AfterReturning",
+      "note": "Runs only on success, and can read the return value."
+     },
+     "s5": {
+      "label": "@After",
+      "note": "Runs last, like a finally block, whatever happened."
+     },
+     "s6": {
+      "label": "Order",
+      "note": "The result goes back. With several kinds of advice on one method, Spring runs them in this order."
+     }
+    },
+    "throws": {
+     "label": "When it throws",
+     "s0": {
+      "label": "place(request)",
+      "note": "A normal call through the proxy."
+     },
+     "s1": {
+      "label": "@Before",
+      "note": "Runs first, as before."
+     },
+     "s2": {
+      "label": "place(request)",
+      "note": "The real method runs."
+     },
+     "s3": {
+      "label": "throws IllegalStateException",
+      "note": "The method fails."
+     },
+     "s4": {
+      "label": "@AfterThrowing",
+      "note": "Runs only on failure, and can read the exception. It cannot swallow it."
+     },
+     "s5": {
+      "label": "@After",
+      "note": "Still runs, as a finally block would."
+     },
+     "s6": {
+      "label": "IllegalStateException",
+      "note": "The exception still reaches the caller. Only @Around advice can catch it and return something else."
+     }
+    },
+    "selfcall": {
+     "label": "Self-call trap",
+     "s0": {
+      "label": "place(request)",
+      "note": "The call arrives through the proxy, so advice applies."
+     },
+     "s1": {
+      "label": "run advice",
+      "note": "The aspect wraps place(), as expected."
+     },
+     "s2": {
+      "label": "place(request)",
+      "note": "The real method starts."
+     },
+     "s3": {
+      "label": "this.audit(request)",
+      "note": "Inside the object, this means the real OrderService, not the proxy. The call goes straight to the method."
+     },
+     "s4": {
+      "label": "audit() runs without advice",
+      "note": "The pointcut matches audit(), but nothing intercepts the call, so the aspect never runs. The same trap hits @Transactional, @Cacheable and @Async."
+     },
+     "s5": {
+      "label": "return",
+      "note": "place() finishes."
+     },
+     "s6": {
+      "label": "Fix: call audit() on another bean",
+      "note": "Move audit() into its own bean and inject it. The call then crosses a proxy and the advice runs."
+     }
+    }
    }
   },
   "lane": {
@@ -4499,7 +5141,16 @@
    "DataSource": "The connection pool to the database.",
    "Swagger UI": "A web page, bundled by springdoc, that draws the API description and can call it.",
    "springdoc": "The library that builds the OpenAPI description from your controllers.",
-   "Spring Data REST": "Generates REST controllers from repository interfaces."
+   "Spring Data REST": "Generates REST controllers from repository interfaces.",
+   "Step": "The step: runs the read, process, write loop and owns the chunk transaction.",
+   "ItemReader": "Returns one item per call, and null when the input is finished. It remembers its own position.",
+   "ItemProcessor": "Transforms, validates or filters one item. Returning null drops the item.",
+   "ItemWriter": "Receives a whole chunk and saves it in one go, inside the chunk transaction.",
+   "csv file": "The input file. The reader pulls one line at a time.",
+   "ExecutionContext": "A small map saved to the metadata tables at each commit. Readers keep their position here.",
+   "Rules": "Your validation and cleaning rules.",
+   "TimingAspect": "An aspect: a class that holds behaviour needed by many methods, here timing.",
+   "AuditAspect": "An aspect with several kinds of advice around one method."
   },
   "break": {
    "seq-tx": {
@@ -4907,6 +5558,22 @@
      "o2": "Retries the item",
      "o3": "Stops the chunk",
      "w": "The item is skipped without error and counted in the filter count."
+    },
+    "3": {
+     "q": "How many items does ItemWriter.write receive per call?",
+     "o0": "The whole chunk, as one list",
+     "o1": "One item",
+     "o2": "The entire input",
+     "o3": "Two: the current and the previous",
+     "w": "The writer runs once per chunk, which is what allows batch inserts and one commit per chunk."
+    },
+    "4": {
+     "q": "Where should per-item business logic, such as cleaning an email, go?",
+     "o0": "In the ItemProcessor",
+     "o1": "In the ItemReader",
+     "o2": "In the JobRepository",
+     "o3": "In the ItemWriter only",
+     "w": "The processor sees one item at a time, can transform or filter it, and keeps the reader and writer simple."
     }
    },
    "runtime": {
@@ -5090,6 +5757,32 @@
      "o3": "App.java",
      "w": "Ports, database URLs and feature flags live there, with one file per profile."
     }
+   },
+   "aop": {
+    "0": {
+     "q": "What does joinPoint.proceed() do in @Around advice?",
+     "o0": "Runs the real method, or the next advice",
+     "o1": "Throws the exception",
+     "o2": "Starts a transaction",
+     "o3": "Creates the proxy",
+     "w": "The advice decides when, and whether, the real method runs. Without proceed() it never executes."
+    },
+    "1": {
+     "q": "Which question does a pointcut expression answer?",
+     "o0": "Which methods should the advice apply to?",
+     "o1": "When does the bean start?",
+     "o2": "Which database is used?",
+     "o3": "Who is logged in?",
+     "w": "A pointcut selects join points, which in Spring AOP are method calls on beans."
+    },
+    "2": {
+     "q": "Why does a method calling this.audit() skip the aspect?",
+     "o0": "The call does not go through the proxy",
+     "o1": "Aspects only work on public fields",
+     "o2": "Spring caches the result",
+     "o3": "AOP is switched off in tests",
+     "w": "this is the real object. Only calls that arrive through the proxy can be intercepted."
+    }
    }
   },
   "read": {
@@ -5167,6 +5860,11 @@
    "compare": {
     "0": "Spring guides",
     "1": "Why Spring"
+   },
+   "aop": {
+    "0": "Aspect Oriented Programming with Spring",
+    "1": "Proxying mechanisms",
+    "2": "Pointcut expressions"
    }
   },
   "sim": {
@@ -5420,7 +6118,8 @@
     "capstone": "One order, end to end",
     "apidocs": "API docs and Data REST",
     "troubleshooting": "Troubleshooting",
-    "compare": "Spring vs other stacks"
+    "compare": "Spring vs other stacks",
+    "aop": "AOP"
    },
    "table": {
     "head": [
@@ -5485,7 +6184,11 @@
       "Several instances must share logins."
      ]
     ]
-   }
+   },
+   "start": "Start learning",
+   "startHint": "Browse every topic, or pick a path to see them in a sensible order.",
+   "allTopics": "All topics",
+   "watching": "Now playing"
   },
   "ex": {
    "diagramView": "Diagram view",
@@ -5605,6 +6308,144 @@
     "restart": "The job is restarted with the same parameters. Batch reads the saved position and skips records 1 to {n}. Imagine record 7 was fixed in the source file."
    }
   },
-  "credit": "Designed by Rami Hlioui"
+  "credit": "Designed by Rami Hlioui",
+  "glossary": {
+   "learn": "Learn more",
+   "bean": {
+    "t": "Bean",
+    "d": "An object that Spring creates, keeps and hands out. Any class Spring manages is a bean.",
+    "topic": "beans"
+   },
+   "component": {
+    "t": "Component",
+    "d": "A class marked so Spring finds it while scanning, with @Component or a stereotype such as @Service.",
+    "topic": "beans"
+   },
+   "di": {
+    "t": "Dependency injection",
+    "d": "A class asks for the helpers it needs and something else hands them over, instead of the class creating them itself.",
+    "topic": "injection"
+   },
+   "context": {
+    "t": "ApplicationContext",
+    "d": "The container. It creates the beans, wires them together and shuts them down.",
+    "topic": "spring"
+   },
+   "proxy": {
+    "t": "Proxy",
+    "d": "A generated stand-in that wraps a bean to add behaviour such as transactions, caching or logging.",
+    "topic": "aop"
+   },
+   "stereotype": {
+    "t": "Stereotype",
+    "d": "An annotation such as @Service or @Repository that marks a class as a bean and says which layer it belongs to.",
+    "topic": "beans"
+   },
+   "singleton": {
+    "t": "Singleton",
+    "d": "One shared instance for the whole container. It is the default scope of a bean.",
+    "topic": "beans"
+   },
+   "aspect": {
+    "t": "Aspect",
+    "d": "A class that holds behaviour needed by many methods, such as logging or timing, written once instead of repeated.",
+    "topic": "aop"
+   },
+   "advice": {
+    "t": "Advice",
+    "d": "The code an aspect runs at a chosen point: before, after or around a method.",
+    "topic": "aop"
+   },
+   "pointcut": {
+    "t": "Pointcut",
+    "d": "An expression that selects which methods an aspect applies to.",
+    "topic": "aop"
+   },
+   "joinpoint": {
+    "t": "Join point",
+    "d": "A moment where advice can run. In Spring AOP it is always a method call.",
+    "topic": "aop"
+   },
+   "transaction": {
+    "t": "Transaction",
+    "d": "A group of database changes that succeed or fail together.",
+    "topic": "transactions"
+   },
+   "rollback": {
+    "t": "Rollback",
+    "d": "Undoing every change made since the transaction began.",
+    "topic": "transactions"
+   },
+   "dto": {
+    "t": "DTO",
+    "d": "Data Transfer Object: a plain class that defines exactly what goes into or out of an API.",
+    "topic": "web"
+   },
+   "projection": {
+    "t": "Projection",
+    "d": "Reading only some columns into a smaller type instead of loading the whole entity.",
+    "topic": "data"
+   },
+   "dirty": {
+    "t": "Dirty checking",
+    "d": "Hibernate noticing that a loaded entity changed and writing the UPDATE at commit without being asked.",
+    "topic": "jpa"
+   },
+   "chunk": {
+    "t": "Chunk",
+    "d": "A fixed-size group of items that a batch step reads, processes, writes and commits together.",
+    "topic": "batch"
+   },
+   "filterchain": {
+    "t": "Filter chain",
+    "d": "An ordered list of filters every request passes through before it reaches your controller.",
+    "topic": "security"
+   },
+   "jwt": {
+    "t": "JWT",
+    "d": "JSON Web Token: a signed token that carries the user's identity, so the server needs no session.",
+    "topic": "security"
+   },
+   "oauth": {
+    "t": "OAuth 2",
+    "d": "A standard that lets an app act for a user without ever seeing their password.",
+    "topic": "security"
+   },
+   "cors": {
+    "t": "CORS",
+    "d": "A browser rule that stops a page calling another origin unless that server allows it.",
+    "topic": "security"
+   },
+   "csrf": {
+    "t": "CSRF",
+    "d": "An attack where another site makes your browser send a request you did not intend, using your logged-in session.",
+    "topic": "security"
+   },
+   "starter": {
+    "t": "Starter",
+    "d": "A dependency that pulls in a ready-made set of libraries for one purpose, such as web or JPA.",
+    "topic": "boot"
+   },
+   "autoconfig": {
+    "t": "Auto-configuration",
+    "d": "Boot creating beans for you when it finds the matching libraries on the classpath.",
+    "topic": "boot"
+   },
+   "profile": {
+    "t": "Profile",
+    "d": "A named set of configuration, such as dev or prod, switched on when the application starts.",
+    "topic": "config"
+   },
+   "lombok": {
+    "t": "Lombok",
+    "d": "A compile-time tool that generates boilerplate such as getters and constructors from annotations.",
+    "topic": "tools"
+   },
+   "mapstruct": {
+    "t": "MapStruct",
+    "d": "A compile-time tool that generates the code that maps one class to another.",
+    "topic": "tools"
+   }
+  }
  }
 }

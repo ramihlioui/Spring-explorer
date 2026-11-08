@@ -33,23 +33,76 @@ export function isoBlock(cx: number, cy: number, label: string, o: { a?: number;
   return `<g class="blk"><g class="shk">${shape}<text class="nm" x="${cx}" y="${cy + 4}" text-anchor="middle" style="font-size:${fs}px">${esc(label)}</text></g></g>`;
 }
 
-export function animatePacket(path: SVGPathElement | null, dot: SVGElement | null, ms: number) {
+export interface PacketExtras {
+  /** Trailing dots that follow the packet, nearest first. */
+  tail?: SVGElement[];
+  /** An arrowhead that rides the tip of the line. */
+  head?: SVGElement | null;
+  /** A text label that travels with the packet. */
+  label?: SVGElement | null;
+  /** Draw the line from the sender as the packet moves (calls). Returns fade in instead, because they are dashed. */
+  draw?: boolean;
+  onDone?: () => void;
+}
+
+export function animatePacket(path: SVGPathElement | null, dot: SVGElement | null, ms: number, x: PacketExtras = {}) {
   if (!path || !dot) return;
   const len = path.getTotalLength();
-  const put = (t: number) => {
-    const p = path.getPointAtLength(len * t);
-    dot.setAttribute("cx", String(p.x));
-    dot.setAttribute("cy", String(p.y));
+  const at = (t: number) => path.getPointAtLength(len * Math.min(1, Math.max(0, t)));
+  const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const place = (el: SVGElement, p: DOMPoint, dy = 0) => {
+    el.setAttribute(el.tagName === "text" ? "x" : "cx", String(p.x));
+    el.setAttribute(el.tagName === "text" ? "y" : "cy", String(p.y + dy));
+  };
+  const finish = () => {
+    place(dot, at(1));
+    x.tail?.forEach((t) => t.setAttribute("opacity", "0"));
+    path.style.strokeDasharray = "";
+    path.style.strokeDashoffset = "";
+    path.style.opacity = "";
+    path.style.markerEnd = "";
+    if (x.label) x.label.setAttribute("opacity", "0");
+    x.head?.setAttribute("opacity", "0");
+    dot.setAttribute("opacity", "1");
+    x.onDone?.();
   };
   if (!ms || REDUCED()) {
-    put(1);
+    finish();
     return;
   }
+  const dashed = getComputedStyle(path).strokeDasharray !== "none";
+  path.style.markerEnd = "none";
+  if (x.head) dot.setAttribute("opacity", "0");
   const t0 = performance.now();
   (function f(now: number) {
-    const t = Math.min(1, Math.max(0, (now - t0) / ms));
-    put(t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    if (t < 1) requestAnimationFrame(f);
+    const raw = Math.min(1, Math.max(0, (now - t0) / ms)),
+      t = ease(raw);
+    place(dot, at(t));
+    if (x.draw !== false) {
+      if (dashed) path.style.opacity = String(Math.min(1, t * 2.2));
+      else {
+        path.style.strokeDasharray = String(len);
+        path.style.strokeDashoffset = String(len * (1 - t));
+      }
+    }
+    if (x.head) {
+      const p = at(t),
+        q = at(Math.min(1, t + 0.02)),
+        r = at(Math.max(0, t - 0.02));
+      const a = (Math.atan2(q.y - r.y, q.x - r.x) * 180) / Math.PI;
+      x.head.setAttribute("transform", `translate(${p.x} ${p.y}) rotate(${a})`);
+      x.head.setAttribute("opacity", "1");
+    }
+    x.tail?.forEach((el, i) => {
+      place(el, at(t - 0.045 * (i + 1)));
+      el.setAttribute("opacity", String(t > 0.02 && t < 1 ? 0.5 - i * 0.16 : 0));
+    });
+    if (x.label) {
+      place(x.label, at(t), -12);
+      x.label.setAttribute("opacity", String(raw < 0.88 ? 1 : (1 - raw) / 0.12));
+    }
+    if (raw < 1) requestAnimationFrame(f);
+    else finish();
   })(t0);
 }
 
@@ -236,6 +289,7 @@ export function createExplorer(
   }
   type G = ReturnType<typeof geom>;
   let focusX = 0.5;
+  let lastStep = "";
   function edge(g: G, ia: number, ib: number) {
     const A = g.pos[ia],
       B = g.pos[ib],
@@ -295,7 +349,7 @@ export function createExplorer(
       h += `<g class="gn ${on ? "on" : ""} ${tgt ? "tgt " + (st.kind || "") : ""} ${selNode === i ? "sel" : ""}" data-l="${i}" style="--i:${i}" tabindex="0" role="button" aria-label="${esc(l)}">${isoBlock(p.x, p.y, l, { a: g.a, cyl })}<text class="bd" x="${p.x}" y="${p.y + g.b + g.d + 18}" text-anchor="middle">${esc(bd)}</text></g>`;
     });
     const horiz = fi !== ti && Math.abs(g.pos[fi].y - g.pos[ti].y) < 4 && Math.abs(g.pos[fi].x - g.pos[ti].x) < 300;
-    h += `<text class="glab" x="${ce.lx}" y="${horiz ? g.pos[fi].y - g.b - 22 : ce.ly - 10}" text-anchor="middle">${esc(st.label)}</text><circle id="${rootId}-dot" class="pk ${st.kind || ""}" r="4.5" cx="${ce.sx}" cy="${ce.sy}"/>`;
+    h += `<text class="glab" x="${ce.lx}" y="${horiz ? g.pos[fi].y - g.b - 22 : ce.ly - 10}" text-anchor="middle">${esc(st.label)}</text>${[1, 2, 3].map((n) => `<circle class="pk-t ${st.kind || ""}" r="${4.2 - n * 0.7}" cx="${ce.sx}" cy="${ce.sy}" opacity="0"/>`).join("")}<text class="pk-lab ${st.kind || ""}" text-anchor="middle" x="${ce.sx}" y="${ce.sy}" opacity="0">${esc(st.label)}</text><path class="pk-head ${st.kind || ""}" d="M-7 -5L1 0L-7 5" opacity="0"/><circle id="${rootId}-dot" class="pk ${st.kind || ""}" r="4.5" cx="${ce.sx}" cy="${ce.sy}"/>`;
     return h + "</svg>";
   }
   function renderGraph(still: boolean) {
@@ -305,10 +359,17 @@ export function createExplorer(
       const svg = wrap.querySelector("svg")!;
       wrap.scrollTo({ left: Math.max(0, focusX * svg.clientWidth - wrap.clientWidth / 2), behavior: still || REDUCED() ? "auto" : "smooth" });
     }
-    animatePacket(q<SVGPathElement>("#" + rootId + "-cp"), q<SVGElement>("#" + rootId + "-dot"), still ? 0 : 900);
+    const svg = wrap.querySelector("svg");
+    if (!still && !REDUCED()) svg?.classList.add("moving");
+    animatePacket(q<SVGPathElement>("#" + rootId + "-cp"), q<SVGElement>("#" + rootId + "-dot"), still ? 0 : 900, {
+      tail: [...wrap.querySelectorAll<SVGElement>(".pk-t")],
+      label: wrap.querySelector<SVGElement>(".pk-lab"),
+      head: wrap.querySelector<SVGElement>(".pk-head"),
+      onDone: () => svg?.classList.remove("moving"),
+    });
     const up = () => q("[data-r=graph]").querySelectorAll(".gn.tgt").forEach((n) => n.classList.add("up"));
     if (still || REDUCED()) up();
-    else requestAnimationFrame(() => requestAnimationFrame(up));
+    else setTimeout(up, 640);
   }
   function nodeInfo() {
     const S = sc(),
@@ -414,7 +475,7 @@ export function createExplorer(
         Object.entries(d.txs)
           .map(
             ([k, v]) =>
-              `<span class="st ${v === "committed" ? "ok" : v === "open" ? "" : "bad"}">${esc(k === "autocommit" ? U("autocommitLong") : k + ": " + txLabel(v))}</span>`,
+              `<span class="st ${v === "committed" ? "ok" : v === "open" ? "" : "bad"}${S.steps[cur].set && k in S.steps[cur].set! ? " fresh" : ""}">${esc(k === "autocommit" ? U("autocommitLong") : k + ": " + txLabel(v))}</span>`,
           )
           .join("") || `<span class="st">${esc(U("noTx"))}</span>`;
       const body = d.rows.length
@@ -423,7 +484,8 @@ export function createExplorer(
               const v = d.txs[tx],
                 c = v === "committed" ? "ok" : v === "rolled back" ? "bad" : "",
                 lab = c === "" ? U("pending") : c === "bad" ? U("rolledBack") : U("committed");
-              return `<div class="srow"><span>${esc(t)}</span><span class="st ${c}">${esc(lab)}</span></div>`;
+              const fresh = !!S.steps[cur].set && tx in S.steps[cur].set!;
+              return `<div class="srow${fresh ? " fresh " + c : ""}"><span>${esc(t)}</span><span class="st ${c}">${esc(lab)}</span></div>`;
             })
             .join("")
         : `<div class="note">${esc(U("noRows"))}</div>`;
@@ -462,6 +524,14 @@ export function createExplorer(
     q("[data-r=fig]").innerHTML = seqHTML();
     nodeInfo();
     q("[data-r=over]").innerHTML = overHTML();
+    const stepId = key + ":" + cur;
+    if (stepId !== lastStep && !REDUCED()) {
+      const ov = q("[data-r=over]");
+      ov.classList.remove("enter");
+      void ov.offsetWidth;
+      ov.classList.add("enter");
+    }
+    lastStep = stepId;
     q("[data-r=count]").textContent = `${cur + 1} / ${n}`;
     const tb = q("[data-r=tbl]");
     tb.innerHTML = tblHTML();
@@ -483,9 +553,15 @@ export function createExplorer(
     } else ft.hidden = true;
     const showHi = !files || fname === (st.file || files[0]);
     const c = q("[data-r=code]");
-    c.innerHTML = codeHTML(lines, showHi ? st.hi || [] : []);
+    const text = (Array.isArray(lines) ? lines : String(lines).split("\n")).join("\n");
+    const hiNow = showHi ? st.hi || [] : [];
+    if (c.dataset.code === text && c.childElementCount) {
+      c.querySelectorAll<HTMLElement>(".ln").forEach((el, i) => el.classList.toggle("hi", hiNow.includes(i)));
+    } else {
+      c.innerHTML = codeHTML(lines, hiNow);
+      c.dataset.code = text;
+    }
     c.classList.toggle("dimmed", !!(showHi && st.hi && st.hi.length));
-    c.dataset.code = (Array.isArray(lines) ? lines : String(lines).split("\n")).join("\n");
     q<HTMLButtonElement>("[data-a=back]").disabled = cur === 0;
     q<HTMLButtonElement>("[data-a=next]").disabled = cur === n - 1;
     q("[data-r=graph]").hidden = view === "seq";
@@ -526,7 +602,11 @@ export function createExplorer(
     if (timer) clearInterval(timer);
     timer = setInterval(() => {
       if (cur >= last()) {
-        if (cfg.loop) go(0);
+        if (cfg.cycle) {
+          set(keys[(keys.indexOf(key) + 1) % keys.length]);
+          setPlay(true);
+          startTimer();
+        } else if (cfg.loop) go(0);
         else stop();
         return;
       }

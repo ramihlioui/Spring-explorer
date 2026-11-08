@@ -9,7 +9,7 @@ export interface Scenario {
   code?: string[]; files?: Record<string, string[]>; steps: Step[]; info?: Record<string, string>;
 }
 export interface ExplorerCfg {
-  selector?: boolean; compact?: boolean; autoplay?: boolean; loop?: boolean;
+  selector?: boolean; cycle?: boolean; compact?: boolean; autoplay?: boolean; loop?: boolean;
   scenarios: Record<string, Scenario>;
   breakIt?: Record<string, [string, string]>;
   laneInfo: Record<string, string>;

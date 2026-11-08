@@ -1,11 +1,12 @@
 import { Fragment, type ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
+import Term from "./Term";
 
 const decode = (s: string) => s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 
 /** Renders the small inline markup used in lesson text: <code>, <b>, <i>, <kbd>, <br>, <go to="topic">. */
 export default function Rich({ html }: { html: string }) {
-  const re = /<(\/?)(code|b|i|kbd|go)((?:\s[^>]*)?)>|<br\s*\/?>/g;
+  const re = /<(\/?)(code|b|i|kbd|go|term)((?:\s[^>]*)?)>|<br\s*\/?>/g;
   type Frame = { tag: string; attrs: string; kids: ReactNode[] };
   const stack: Frame[] = [{ tag: "", attrs: "", kids: [] }];
   let last = 0,
@@ -30,6 +31,10 @@ export default function Rich({ html }: { html: string }) {
           <i key={key}>{kids}</i>
         ) : f.tag === "kbd" ? (
           <kbd key={key}>{kids}</kbd>
+        ) : f.tag === "term" ? (
+          <Term key={key} k={/k="([^"]+)"/.exec(f.attrs)?.[1] ?? ""}>
+            {kids}
+          </Term>
         ) : (
           <Link key={key} className="link" href={`/${/to="([^"]+)"/.exec(f.attrs)?.[1] ?? ""}`}>
             {kids}
