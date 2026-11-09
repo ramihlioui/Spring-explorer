@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { figure, firstBlock, headline, quiz, read, topicById, views } from "@/content";
+import { figure, firstBlock, headline, interview, quiz, read, topicById, views } from "@/content";
 import { getT } from "@/lib/text";
 import { resolveSims } from "@/lib/resolve";
 import type { FlowLite } from "@/features/topic/trail";
@@ -29,6 +29,7 @@ export default async function TopicView({ id, locale }: { id: string; locale: st
 
   const questions = qs?.map((q) => ({ a: q.a, q: t(q.q), o: q.o.map(t), w: t(q.w) }));
   const reads = read[id];
+  const qa = interview[id];
 
   return (
     <section className="view">
@@ -61,6 +62,22 @@ export default async function TopicView({ id, locale }: { id: string; locale: st
         <div className="tcontent">
           <Nodes nodes={nodes} t={t} sims={sims} />
           {questions && <Quiz id={id} questions={questions} />}
+          {qa && (
+            <div className="block" id={`interview-${id}`}>
+              <h3>{u("interview")}</h3>
+              <p className="why">{u("interviewHint")}</p>
+              <div className="qa">
+                {qa.map((x, i) => (
+                  <details key={i}>
+                    <summary>{t(x.q)}</summary>
+                    <div className="qa-a">
+                      <Rich html={t(x.a)} />
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
           {reads && (
             <div className="block" id={`next-${id}`}>
               <h3>{u("goDeeper")}</h3>

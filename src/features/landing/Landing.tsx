@@ -9,11 +9,11 @@ import TopicIndex from "@/features/landing/TopicIndex";
 import SearchButton from "@/features/landing/SearchButton";
 
 const LAYERS: { key: "leaves" | "stem" | "roots" | "tools" | "plant"; links: [string, string][]; note?: boolean }[] = [
-  { key: "leaves", links: [["security", "security"], ["batch", "batch"], ["data", "data"], ["jpa", "jpa"], ["web", "web"], ["security", "authserver"], ["apidocs", "apidocs"]], note: true },
+  { key: "leaves", links: [["security", "security"], ["batch", "batch"], ["data", "data"], ["jpa", "jpa"], ["web", "web"], ["security", "authserver"], ["apidocs", "apidocs"], ["cloud", "cloud"], ["messaging", "messaging"]], note: true },
   { key: "stem", links: [["boot", "boot"]] },
   { key: "roots", links: [["spring", "spring"], ["injection", "injection"], ["beans", "beans"], ["aop", "aop"], ["config", "config"], ["errors", "errors"], ["transactions", "transactions"], ["testing", "testing"], ["runtime", "runtime"], ["patterns", "patterns"], ["troubleshooting", "troubleshooting"], ["compare", "compare"]] },
   { key: "tools", links: [["tools", "lombok"], ["tools", "mapstruct"]] },
-  { key: "plant", links: [["capstone", "capstone"]] },
+  { key: "plant", links: [["capstone", "capstone"], ["project", "project"]] },
 ];
 
 export default async function Landing({ locale }: { locale: string }) {

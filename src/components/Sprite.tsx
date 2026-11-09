@@ -14,6 +14,7 @@ const ICONS: Record<string, string> = {
   zap: '<path d="M9 1.5L3.5 9H8l-1 5.5L12.5 7H8z"/>',
   target: '<circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="1.8"/>',
   out: '<path d="M5 3h8v8M13 3L4 12"/>',
+  embed: '<path d="M5.5 4.5L2 8l3.5 3.5M10.5 4.5L14 8l-3.5 3.5"/>',
   chev: '<path d="M4 6l4 4 4-4"/>',
 };
 

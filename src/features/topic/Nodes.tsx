@@ -11,6 +11,7 @@ import ChainSim from "@/features/sims/ChainSim";
 import PatternsSim from "@/features/sims/PatternsSim";
 import StartersSim from "@/features/sims/StartersSim";
 import Rich from "@/components/Rich";
+import { DoneToggle, ProjectProgress } from "./ProjectSteps";
 
 const style = (s?: string): CSSProperties | undefined => {
   if (!s) return undefined;
@@ -132,6 +133,10 @@ export default function Nodes({ nodes, t, sims }: { nodes: Node[]; t: T; sims: R
             ))}
           </div>
         );
+      case "done":
+        return <DoneToggle key={i} id={n.id} />;
+      case "progress":
+        return <ProjectProgress key={i} ids={n.ids} />;
       case "explorer":
         return (
           <div className="panel" key={i}>

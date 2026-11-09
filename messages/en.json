@@ -28,6 +28,10 @@
     "flow4": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "injection": {
@@ -73,6 +77,10 @@
     "flow9": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "beans": {
@@ -102,6 +110,10 @@
     "flow5": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "boot": {
@@ -123,6 +135,10 @@
     "flow3": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "config": {
@@ -152,6 +168,10 @@
     "flow5": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "web": {
@@ -185,6 +205,10 @@
     "flow6": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "errors": {
@@ -218,6 +242,10 @@
     "flow6": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "data": {
@@ -259,6 +287,10 @@
     "flow8": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "jpa": {
@@ -308,6 +340,10 @@
     "flow10": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "transactions": {
@@ -345,6 +381,10 @@
     "flow7": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "testing": {
@@ -386,6 +426,10 @@
     "flow8": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "security": {
@@ -431,6 +475,10 @@
     "flow9": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "batch": {
@@ -488,6 +536,10 @@
     "items8": {
      "t": "Built-in classes",
      "s": "Readers, processors, writers"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "runtime": {
@@ -525,6 +577,10 @@
     "flow7": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "tools": {
@@ -566,6 +622,10 @@
     "flow8": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "patterns": {
@@ -607,6 +667,10 @@
     "flow8": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "capstone": {
@@ -632,6 +696,10 @@
     "flow4": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "troubleshooting": {
@@ -665,6 +733,10 @@
     "flow6": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "apidocs": {
@@ -690,6 +762,10 @@
     "flow4": {
      "t": "Quick check",
      "s": "3 questions"
+    },
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
     }
    },
    "compare": {
@@ -760,7 +836,134 @@
     },
     "name": "AOP",
     "sub": "Aspects, advice and proxies",
-    "blurb": "How Spring adds logging, timing and security around your methods without changing them."
+    "blurb": "How Spring adds logging, timing and security around your methods without changing them.",
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
+    }
+   },
+   "cloud": {
+    "flow0": {
+     "t": "Four problems",
+     "s": "Why Spring Cloud exists"
+    },
+    "flow1": {
+     "t": "Gateway",
+     "s": "One door for clients"
+    },
+    "flow2": {
+     "t": "Discovery",
+     "s": "Finding services by name"
+    },
+    "flow3": {
+     "t": "Circuit breaker",
+     "s": "Containing a failure"
+    },
+    "flow4": {
+     "t": "Config server",
+     "s": "Settings from Git"
+    },
+    "flow5": {
+     "t": "What you add",
+     "s": "Registry and clients"
+    },
+    "flow6": {
+     "t": "Do you need it?",
+     "s": "Monolith and Kubernetes"
+    },
+    "flow7": {
+     "t": "Quick check",
+     "s": "3 questions"
+    },
+    "name": "Spring Cloud",
+    "sub": "Gateway, discovery and resilience",
+    "blurb": "How services find, call and protect each other: a gateway, service discovery, a config server and circuit breakers.",
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
+    }
+   },
+   "messaging": {
+    "flow0": {
+     "t": "Calling vs announcing",
+     "s": "REST and messages"
+    },
+    "flow1": {
+     "t": "Six words",
+     "s": "Topic, partition, offset"
+    },
+    "flow2": {
+     "t": "Publish and consume",
+     "s": "One event's life"
+    },
+    "flow3": {
+     "t": "Consumer groups",
+     "s": "Sharing the work"
+    },
+    "flow4": {
+     "t": "Retry and dead letters",
+     "s": "When a handler fails"
+    },
+    "flow5": {
+     "t": "Outbox pattern",
+     "s": "Publishing safely"
+    },
+    "flow6": {
+     "t": "Getting started",
+     "s": "Dependency and settings"
+    },
+    "flow7": {
+     "t": "Two guarantees",
+     "s": "At least once, partition order"
+    },
+    "flow8": {
+     "t": "Quick check",
+     "s": "3 questions"
+    },
+    "name": "Messaging & Kafka",
+    "sub": "Events, topics and consumers",
+    "blurb": "How services talk through messages: topics, partitions, consumer groups, retries and the outbox pattern.",
+    "interview": {
+     "t": "Interview questions",
+     "s": "4 questions"
+    }
+   },
+   "project": {
+    "flow0": {
+     "t": "Overview",
+     "s": "What you will build"
+    },
+    "flow1": {
+     "t": "1. Create",
+     "s": "start.spring.io and run"
+    },
+    "flow2": {
+     "t": "2. Store",
+     "s": "Entity and repository"
+    },
+    "flow3": {
+     "t": "3. Expose",
+     "s": "DTOs, service, controller"
+    },
+    "flow4": {
+     "t": "4. Try it",
+     "s": "curl the API"
+    },
+    "flow5": {
+     "t": "5. Errors",
+     "s": "404 and 400"
+    },
+    "flow6": {
+     "t": "6. Test",
+     "s": "MockMvc"
+    },
+    "flow7": {
+     "t": "Next",
+     "s": "Where to go"
+    },
+    "name": "Build it yourself",
+    "sub": "A guided order API in six steps",
+    "blurb": "Build a working order service step by step: entity, API, validation, errors and a test."
    }
   },
   "group": {
@@ -768,7 +971,8 @@
    "1": "Web and data",
    "2": "Reliability",
    "3": "Security and tools",
-   "4": "Put it together"
+   "4": "Put it together",
+   "5": "Beyond one service"
   },
   "path": {
    "0": {
@@ -790,6 +994,10 @@
    "4": {
     "n": "Put it together",
     "d": "One order through every layer you have learned."
+   },
+   "5": {
+    "n": "Beyond one service",
+    "d": "Split an application into services, connect them with messages, and keep them working when one fails."
    }
   },
   "headline": {
@@ -805,7 +1013,10 @@
    "troubleshooting": "Every Spring error message points at a cause. Learn to read it.",
    "apidocs": "Your API can describe itself, and a repository can become an endpoint.",
    "compare": "If you know Express, Django or .NET, you already know most of Spring.",
-   "aop": "AOP adds behaviour around your methods without touching them."
+   "aop": "AOP adds behaviour around your methods without touching them.",
+   "cloud": "When one app becomes many, services need a way to find and protect each other.",
+   "messaging": "Instead of calling a service, publish what happened and let anyone who cares listen.",
+   "project": "Build a small order API, one step at a time."
   },
   "v": {
    "spring": {
@@ -1986,6 +2197,125 @@
     "66": "What Spring AOP cannot do",
     "h2": "AOP adds behaviour around your methods without touching them.",
     "sub": "Logging, timing, security and <term k=\"transaction\">transactions</term> are needed in many places and belong in none of them. An aspect writes that code once, and Spring wraps the right methods with it through a <term k=\"proxy\">proxy</term>."
+   },
+   "cloud": {
+    "0": "In one application a method call finds its target, shares its settings and fails loudly. Between services every one of those becomes a network problem. Spring Cloud is a set of small answers, one per problem.",
+    "1": "Problem",
+    "2": "The idea",
+    "3": "Spring Cloud piece",
+    "4": "Clients should reach many services through one door",
+    "5": "An API gateway",
+    "6": "Spring Cloud Gateway",
+    "7": "Services must find each other as instances come and go",
+    "8": "Service discovery",
+    "9": "Eureka, Consul, or Kubernetes discovery",
+    "10": "Every service needs shared, changeable settings",
+    "11": "A central config server",
+    "12": "Spring Cloud Config",
+    "13": "One slow dependency must not take everything down",
+    "14": "A circuit breaker",
+    "15": "Spring Cloud CircuitBreaker with Resilience4j",
+    "16": "You need to follow one request across services",
+    "17": "Distributed tracing",
+    "18": "Micrometer Tracing",
+    "19": "Four problems that appear when you split an app",
+    "20": "Pick a trail. The gateway and discovery trails show one request crossing the system, the circuit breaker shows how a failure is contained, and the config trail shows settings arriving at startup.",
+    "21": "Watch the pieces work",
+    "22": "The registry",
+    "23": "Which services need it",
+    "24": "Every service that registers or looks up others adds the Eureka client starter, then sets <code>spring.application.name</code>. The gateway needs the same, plus the gateway starter.",
+    "25": "What you add",
+    "26": "Spring Cloud solves real problems, but each piece is also something to run, secure and understand. Many teams need less than they expect.",
+    "27": "Start with a modular monolith",
+    "28": "One deployable application with clear internal modules gets you most of the design benefits, and none of the network problems. Split a service out when a real reason appears, such as a team boundary or very different scaling.",
+    "29": "Kubernetes may already do it",
+    "30": "Kubernetes provides service discovery (DNS), load balancing, config maps and secrets, and ingress. On Kubernetes, Spring Cloud's discovery and config servers are often unnecessary. Resilience and tracing still apply.",
+    "31": "Do you need it?",
+    "h2": "When one app becomes many, services need a way to find and protect each other.",
+    "sub": "Splitting an application into services creates new problems: how a client reaches them through one door, how they find each other, where shared settings live, and what happens when one fails. Spring Cloud has a small answer for each."
+   },
+   "messaging": {
+    "0": "A call needs the other side to be there, fast, right now. An event only says that something happened. This changes how services depend on each other.",
+    "1": "",
+    "2": "Direct call (REST)",
+    "3": "Message (Kafka)",
+    "4": "The sender waits for",
+    "5": "The answer",
+    "6": "Only the broker's confirmation",
+    "7": "If the receiver is down",
+    "8": "The call fails",
+    "9": "The event waits in the log",
+    "10": "Adding another receiver",
+    "11": "Change the sender",
+    "12": "Nothing changes in the sender",
+    "13": "Order and replay",
+    "14": "Not kept",
+    "15": "Kept in the log, can be replayed",
+    "16": "Best for",
+    "17": "Questions that need an answer now",
+    "18": "Facts other services react to",
+    "19": "Calling versus announcing",
+    "20": "Word",
+    "21": "Meaning",
+    "22": "Broker",
+    "23": "The Kafka server that stores events",
+    "24": "Topic",
+    "25": "A named log of events, such as orders",
+    "26": "Partition",
+    "27": "A topic is split into partitions. Order is guaranteed only inside one",
+    "28": "Offset",
+    "29": "An event's position in a partition. Consumers remember theirs",
+    "30": "Producer",
+    "31": "Code that publishes events, here KafkaTemplate",
+    "32": "Consumer group",
+    "33": "Consumers that share a topic's work. Each partition goes to one member",
+    "34": "Six words to know",
+    "35": "Pick a trail. The first shows the whole life of one event, the second how consumers share work, the third what happens when a handler keeps failing, and the last how to publish safely from a database transaction.",
+    "36": "Watch events travel",
+    "37": "Spring Boot configures the producer, the consumer and the listener container from these settings. <code>KafkaTemplate</code> and <code>@KafkaListener</code> are all you need for a first event.",
+    "38": "Getting started",
+    "39": "At least once",
+    "40": "After a failure or rebalance an event can be delivered again. Make handlers idempotent: processing the same event twice must not charge a customer twice. A unique key or an upsert usually does it.",
+    "41": "Order only within a partition",
+    "42": "Choose the key so that events that must stay in order share it, for example the order id. Do not rely on order across different keys.",
+    "43": "Two guarantees to design around",
+    "h2": "Instead of calling a service, publish what happened and let anyone who cares listen.",
+    "sub": "With messaging, the order service does not call billing, email and stock one by one. It publishes an event and moves on. Each interested service reads it when it is ready, so a slow or broken consumer no longer breaks the sender."
+   },
+   "project": {
+    "0": "A service that accepts an order as JSON, validates it, saves it in a database, and returns it by id, with clear errors and a test. You need Java 17 or newer and a terminal. Tick each step off as you go: your progress stays in this browser.",
+    "1": "What you will build",
+    "2": "Open <code>start.spring.io</code>, choose Maven, Java 17 or newer and the latest Spring Boot, and add these four dependencies. Download the zip and open it in your editor.",
+    "3": "Dependencies",
+    "4": "Settings: no database to install",
+    "5": "Run it",
+    "6": "If the log ends with <i>Started ShopApplication</i> and the process keeps running, the project works. Nothing is exposed yet. Read how this fits together in <go to=\"boot\">Boot</go>.",
+    "7": "Step 1: Create the project",
+    "8": "An entity maps a class to a table, and a repository interface gives you the database operations without writing them.",
+    "9": "The entity",
+    "10": "The repository",
+    "11": "That one line gives you <code>save</code>, <code>findById</code>, <code>findAll</code> and <code>delete</code>. See <go to=\"jpa\">JPA and Hibernate</go> and <go to=\"data\">data access</go> for what happens underneath.",
+    "12": "Step 2: Store orders",
+    "13": "Keep the API shape separate from the entity with two small DTOs, put the rules in a transactional service, and let a controller connect HTTP to the service.",
+    "14": "The DTOs",
+    "15": "The service",
+    "16": "The controller",
+    "17": "Why the DTOs? See <go to=\"web\">Web and DTOs</go>. Why <code>@Transactional</code> on the service? See <go to=\"transactions\">transactions</go>. Restart the application when you are done.",
+    "18": "Step 3: Expose them as an API",
+    "19": "With the application running, send three requests from another terminal.",
+    "20": "The first creates an order and answers 201 with its address. The second reads it back. The third shows a gap: a missing order produces a 500 error, which is the next step.",
+    "21": "Step 4: Try it",
+    "22": "One advice class turns exceptions into answers a client can use: 404 for a missing order, and 400 with the problem fields for a bad body.",
+    "23": "Run the same requests again",
+    "24": "This is the pattern from <go to=\"errors\">error handling</go>. If something does not behave, <go to=\"troubleshooting\">troubleshooting</go> shows how to read the error.",
+    "25": "Step 5: Make errors clear",
+    "26": "A web-slice test starts only the web layer, so it runs in a fraction of a second. The service is replaced by a mock.",
+    "27": "Add a second test for the happy path, then read <go to=\"testing\">testing</go> for the other test slices.",
+    "28": "Step 6: Test it",
+    "29": "You have a complete service. To see its whole life animated, open the <go to=\"capstone\">capstone</go>. To keep going, add login with <go to=\"security\">Spring Security</go>, document the API with <go to=\"apidocs\">springdoc</go>, or publish an event when an order is placed with <go to=\"messaging\">Kafka</go>.",
+    "30": "Where to go next",
+    "h2": "Build a small order API, one step at a time.",
+    "sub": "Reading about Spring is one thing. This guided project builds a real, working order service in six short steps. Each step adds a little code, tells you what to run and what you should see, and links back to the topic that explains it."
    }
   },
   "ex": {
@@ -5028,6 +5358,340 @@
       "note": "Move audit() into its own bean and inject it. The call then crosses a proxy and the advice runs."
      }
     }
+   },
+   "seq-cloud": {
+    "gateway": {
+     "label": "Gateway",
+     "s0": {
+      "label": "GET /api/orders/42",
+      "note": "Clients know one address, the gateway. They do not know how many services exist or where they run."
+     },
+     "s1": {
+      "label": "match route orders-route",
+      "note": "The Path=/api/orders/** predicate matches, so this route handles the request."
+     },
+     "s2": {
+      "label": "run filters",
+      "note": "Route filters run now: here StripPrefix removes /api. Authentication and rate limiting usually sit here too."
+     },
+     "s3": {
+      "label": "where is orders-service?",
+      "note": "The uri says lb://orders-service. lb:// means look the name up in the registry instead of using a fixed host."
+     },
+     "s4": {
+      "label": "10.0.0.7:8081, 10.0.0.8:8081",
+      "note": "Two healthy instances are registered."
+     },
+     "s5": {
+      "label": "load balance: pick 10.0.0.8",
+      "note": "The gateway chooses one instance. Round robin by default."
+     },
+     "s6": {
+      "label": "GET /orders/42",
+      "note": "The request is forwarded with the prefix already stripped."
+     },
+     "s7": {
+      "label": "200 + JSON",
+      "note": "The service answers as if called directly."
+     },
+     "s8": {
+      "label": "200 + JSON",
+      "note": "The client never learned an internal address. Instances can come and go without it noticing."
+     }
+    },
+    "discovery": {
+     "label": "Discovery",
+     "s0": {
+      "label": "register orders-service",
+      "note": "At startup a service tells the registry its name and address. The name comes from spring.application.name."
+     },
+     "s1": {
+      "label": "heartbeat (every 30 s)",
+      "note": "A repeating message that says: still alive."
+     },
+     "s2": {
+      "label": "who is orders-service?",
+      "note": "A caller asks the registry by name instead of hard-coding a host."
+     },
+     "s3": {
+      "label": "10.0.0.7:8081",
+      "note": "The address list. Callers cache it and refresh it regularly."
+     },
+     "s4": {
+      "label": "POST /orders/42/pay",
+      "note": "The call goes straight to the service. The registry is not in the data path."
+     },
+     "s5": {
+      "label": "(stops sending heartbeats)",
+      "note": "The instance crashes without saying goodbye."
+     },
+     "s6": {
+      "label": "evict after missed heartbeats",
+      "note": "After the lease runs out (90 seconds by default) the registry removes the instance. Callers stop receiving its address at their next refresh."
+     }
+    },
+    "breaker": {
+     "label": "Circuit breaker",
+     "s0": {
+      "label": "charge(order)",
+      "note": "The call goes through the breaker. It starts CLOSED, which means calls pass.",
+      "badge": {
+       "CircuitBreaker": "CLOSED"
+      }
+     },
+     "s1": {
+      "label": "charge",
+      "note": "A normal call."
+     },
+     "s2": {
+      "label": "200",
+      "note": "It works, so the breaker records a success."
+     },
+     "s3": {
+      "label": "charge",
+      "note": "Later, the payment service gets slow."
+     },
+     "s4": {
+      "label": "timeout",
+      "note": "The call fails. The breaker counts it in its sliding window.",
+      "badge": {
+       "CircuitBreaker": "failures 6 of 10"
+      }
+     },
+     "s5": {
+      "label": "failure rate over threshold: OPEN",
+      "note": "Past the failure-rate limit (50 percent by default) the breaker opens.",
+      "badge": {
+       "CircuitBreaker": "OPEN"
+      }
+     },
+     "s6": {
+      "label": "charge(order)",
+      "note": "The next call arrives while the breaker is open.",
+      "badge": {
+       "CircuitBreaker": "OPEN"
+      }
+     },
+     "s7": {
+      "label": "fallback: Receipt.pending",
+      "note": "It fails fast without calling the struggling service, and returns the fallback. Threads are no longer stuck waiting."
+     },
+     "s8": {
+      "label": "trial call (HALF_OPEN)",
+      "note": "After the wait time the breaker lets a few trial calls through to test recovery.",
+      "badge": {
+       "CircuitBreaker": "HALF_OPEN"
+      }
+     },
+     "s9": {
+      "label": "200",
+      "note": "The trial succeeds, so the breaker closes again and normal traffic resumes.",
+      "badge": {
+       "CircuitBreaker": "CLOSED"
+      }
+     }
+    },
+    "config": {
+     "label": "Config server",
+     "s0": {
+      "label": "GET /orders-service/prod",
+      "note": "At startup the service asks the config server for its settings, by its name and active profile."
+     },
+     "s1": {
+      "label": "read orders-service-prod.yml",
+      "note": "The config server is backed by a Git repository, so every change is versioned and reviewed."
+     },
+     "s2": {
+      "label": "the file",
+      "note": "Plain YAML files, one per service and profile."
+     },
+     "s3": {
+      "label": "properties",
+      "note": "The properties are merged with local settings and bound like any other configuration."
+     },
+     "s4": {
+      "label": "bind to @ConfigurationProperties",
+      "note": "From here on the service uses them as normal. It does not know they came over the network."
+     },
+     "s5": {
+      "label": "someone pushes a change",
+      "note": "A setting changes in Git, for example a feature flag."
+     },
+     "s6": {
+      "label": "POST /actuator/refresh",
+      "note": "Beans marked @RefreshScope are rebuilt with the new values, without a restart."
+     }
+    }
+   },
+   "seq-msg": {
+    "publish": {
+     "label": "Publish and consume",
+     "s0": {
+      "label": "send(\"orders\", 42, event)",
+      "note": "The sender hands over an event and a key. It does not know who will read it."
+     },
+     "s1": {
+      "label": "serialize to JSON",
+      "note": "The event object becomes bytes."
+     },
+     "s2": {
+      "label": "append to partition 1",
+      "note": "The key (order 42) decides the partition, so all events for one order stay in order."
+     },
+     "s3": {
+      "label": "ack: offset 118",
+      "note": "The broker confirms. The event now has a permanent position in the log."
+     },
+     "s4": {
+      "label": "send completes",
+      "note": "The sender moves on. Billing and email have not run yet, and it does not wait for them."
+     },
+     "s5": {
+      "label": "poll()",
+      "note": "Consumers pull. The invoicing group asks for events after its last committed offset."
+     },
+     "s6": {
+      "label": "OrderPlaced @ offset 118",
+      "note": "Delivered."
+     },
+     "s7": {
+      "label": "create the invoice",
+      "note": "The @KafkaListener method runs."
+     },
+     "s8": {
+      "label": "commit offset 119",
+      "note": "After the method returns the group records its progress. A restart resumes here."
+     },
+     "s9": {
+      "label": "poll() in group emails",
+      "note": "A different group has its own offset, so it gets its own copy of the same event."
+     },
+     "s10": {
+      "label": "OrderPlaced @ offset 118",
+      "note": "Adding a third service later needs no change to OrderService."
+     }
+    },
+    "group": {
+     "label": "Consumer groups",
+     "s0": {
+      "label": "join group invoicing",
+      "note": "A consumer asks to join the group. The topic has three partitions."
+     },
+     "s1": {
+      "label": "assigned partitions 0, 1, 2",
+      "note": "Alone in the group, it receives all three.",
+      "badge": {
+       "Consumer_A": "p0, p1, p2"
+      }
+     },
+     "s2": {
+      "label": "join group invoicing",
+      "note": "A second instance starts, for example because load rose."
+     },
+     "s3": {
+      "label": "rebalance: keep p0, p1",
+      "note": "The group rebalances. Each partition has exactly one consumer in a group.",
+      "badge": {
+       "Consumer_A": "p0, p1"
+      }
+     },
+     "s4": {
+      "label": "assigned partition 2",
+      "note": "The work is now shared.",
+      "badge": {
+       "Consumer_B": "p2"
+      }
+     },
+     "s5": {
+      "label": "order is kept inside a partition",
+      "note": "Events with the same key land in one partition, so one consumer sees them in order. Across partitions there is no order."
+     },
+     "s6": {
+      "label": "(crashes, no heartbeat)",
+      "note": "The instance dies."
+     },
+     "s7": {
+      "label": "rebalance: p0, p1, p2",
+      "note": "The group notices and hands the lost partition back. Work continues, slower but not stopped.",
+      "badge": {
+       "Consumer_A": "p0, p1, p2"
+      }
+     }
+    },
+    "retry": {
+     "label": "Retry and dead letters",
+     "s0": {
+      "label": "poll()",
+      "note": "A consumer fetches the next event."
+     },
+     "s1": {
+      "label": "OrderPlaced @ offset 120",
+      "note": "This event contains data the handler cannot process."
+     },
+     "s2": {
+      "label": "handler throws",
+      "note": "An exception escapes the @KafkaListener method."
+     },
+     "s3": {
+      "label": "retry 1 of 3, wait 1 s",
+      "note": "The error handler retries in place with a fixed back-off."
+     },
+     "s4": {
+      "label": "retry 3 of 3 fails",
+      "note": "Still failing after the last attempt. Retrying forever would block every event behind this one."
+     },
+     "s5": {
+      "label": "publish to the dead-letter topic",
+      "note": "The recoverer copies the poisoned event, with the exception details in headers, to orders.DLT."
+     },
+     "s6": {
+      "label": "commit offset 121",
+      "note": "The offset moves past the bad event, so the consumer carries on."
+     },
+     "s7": {
+      "label": "a person looks at it later",
+      "note": "Fix the data or the code, then replay the event. Nothing was lost and nothing blocked."
+     }
+    },
+    "outbox": {
+     "label": "Outbox pattern",
+     "s0": {
+      "label": "BEGIN tx-1",
+      "note": "The problem: saving an order and publishing an event are two systems, so one can succeed and the other fail. The outbox keeps both in one database transaction."
+     },
+     "s1": {
+      "label": "INSERT order",
+      "note": "The business data."
+     },
+     "s2": {
+      "label": "INSERT outbox event",
+      "note": "The event is written to a table in the same database, not sent anywhere yet."
+     },
+     "s3": {
+      "label": "COMMIT tx-1",
+      "note": "Both rows commit together, or neither does. There is no state where an order exists without its event."
+     },
+     "s4": {
+      "label": "SELECT unsent events",
+      "note": "A separate relay process polls the outbox table."
+     },
+     "s5": {
+      "label": "outbox #55",
+      "note": "It finds the new event."
+     },
+     "s6": {
+      "label": "publish to Kafka",
+      "note": "Only now does the event reach the broker."
+     },
+     "s7": {
+      "label": "ack",
+      "note": "The broker confirms."
+     },
+     "s8": {
+      "label": "mark outbox #55 sent",
+      "note": "If the relay crashes before this, the event is published again, so consumers must tolerate duplicates."
+     }
+    }
    }
   },
   "lane": {
@@ -5150,7 +5814,23 @@
    "ExecutionContext": "A small map saved to the metadata tables at each commit. Readers keep their position here.",
    "Rules": "Your validation and cleaning rules.",
    "TimingAspect": "An aspect: a class that holds behaviour needed by many methods, here timing.",
-   "AuditAspect": "An aspect with several kinds of advice around one method."
+   "AuditAspect": "An aspect with several kinds of advice around one method.",
+   "Gateway": "The single entry point for clients. It routes, filters and balances requests.",
+   "Eureka": "The service registry: a phone book of running instances.",
+   "OrdersService": "A service that owns orders.",
+   "PaymentService": "A service that takes payments.",
+   "CircuitBreaker": "Counts failures and stops calling a struggling service until it recovers.",
+   "ConfigServer": "Serves configuration files from Git to every service.",
+   "GitRepo": "A Git repository holding the configuration files.",
+   "KafkaTemplate": "Spring's helper for sending messages to Kafka.",
+   "orders topic": "A named, append-only log of events. Consumers read it at their own pace.",
+   "InvoiceListener": "A consumer in the invoicing group.",
+   "Consumer A": "One instance in a consumer group.",
+   "Consumer B": "A second instance in the same group.",
+   "orders": {
+    "DLT": "The dead-letter topic: where events go after repeated failure."
+   },
+   "OutboxRelay": "A process that moves rows from the outbox table to the broker."
   },
   "break": {
    "seq-tx": {
@@ -5783,6 +6463,58 @@
      "o3": "AOP is switched off in tests",
      "w": "this is the real object. Only calls that arrive through the proxy can be intercepted."
     }
+   },
+   "cloud": {
+    "0": {
+     "q": "What does lb://orders-service mean in a gateway route?",
+     "o0": "Look the name up in service discovery and balance across instances",
+     "o1": "Send the request to a host called lb",
+     "o2": "Load a file named orders-service",
+     "o3": "Block the route",
+     "w": "The lb:// scheme asks the load balancer to resolve the service name through the registry."
+    },
+    "1": {
+     "q": "A circuit breaker is OPEN. What happens to the next call?",
+     "o0": "It fails fast and returns the fallback",
+     "o1": "It waits until the service answers",
+     "o2": "It is retried ten times",
+     "o3": "It reaches the service anyway",
+     "w": "While open, the breaker does not call the struggling service, so threads are not tied up waiting."
+    },
+    "2": {
+     "q": "Why might you skip Eureka and the config server on Kubernetes?",
+     "o0": "Kubernetes already provides discovery and config maps",
+     "o1": "Spring Cloud does not run on Kubernetes",
+     "o2": "Kubernetes forbids them",
+     "o3": "They are only for databases",
+     "w": "DNS service names and ConfigMaps cover the same ground, so the Spring pieces are often redundant there."
+    }
+   },
+   "messaging": {
+    "0": {
+     "q": "What does the key of a Kafka message decide?",
+     "o0": "Which partition it goes to, and so the order among events with that key",
+     "o1": "Which broker stores it",
+     "o2": "Who may read it",
+     "o3": "How long it lives",
+     "w": "Events with the same key land in the same partition, which keeps them in order."
+    },
+    "1": {
+     "q": "Two consumers share a group id and a topic has three partitions. What happens?",
+     "o0": "The partitions are divided between them",
+     "o1": "Both read every event",
+     "o2": "Only the first reads",
+     "o3": "The topic is copied",
+     "w": "Each partition goes to exactly one consumer in the group, which is how work is shared."
+    },
+    "2": {
+     "q": "Why must a Kafka handler be idempotent?",
+     "o0": "Events can be delivered more than once, for example after a rebalance",
+     "o1": "Kafka deletes events after one read",
+     "o2": "It makes handlers faster",
+     "o3": "The broker requires it",
+     "w": "Delivery is at least once, so processing an event twice must be safe."
+    }
    }
   },
   "read": {
@@ -5865,6 +6597,20 @@
     "0": "Aspect Oriented Programming with Spring",
     "1": "Proxying mechanisms",
     "2": "Pointcut expressions"
+   },
+   "cloud": {
+    "0": "Spring Cloud",
+    "1": "Spring Cloud Gateway reference",
+    "2": "Spring Cloud CircuitBreaker"
+   },
+   "messaging": {
+    "0": "Spring for Apache Kafka",
+    "1": "Apache Kafka documentation"
+   },
+   "project": {
+    "0": "Spring Initializr",
+    "1": "Building a RESTful web service",
+    "2": "Accessing data with JPA"
    }
   },
   "sim": {
@@ -5995,6 +6741,404 @@
     "name": "Builder",
     "where": "HttpSecurity, StepBuilder, JobBuilder, MockMvc requests."
    }
+  },
+  "interview": {
+   "spring": {
+    "0": {
+     "q": "What is the Spring IoC container?",
+     "a": "The <code>ApplicationContext</code>. It creates objects (beans), wires their dependencies together, manages their lifecycle and hands them out. Your code asks for what it needs instead of calling <code>new</code>."
+    },
+    "1": {
+     "q": "What happens when a Spring application starts?",
+     "a": "Spring scans for components, records a bean definition for each, works out the order from the constructors, then creates the beans leaves first and injects what each one asked for."
+    },
+    "2": {
+     "q": "What is the difference between BeanFactory and ApplicationContext?",
+     "a": "<code>BeanFactory</code> is the basic container. <code>ApplicationContext</code> adds events, internationalisation, resource loading and automatic post-processing, so it is what applications use."
+    },
+    "3": {
+     "q": "What does @SpringBootApplication combine?",
+     "a": "<code>@Configuration</code>, <code>@EnableAutoConfiguration</code> and <code>@ComponentScan</code>, applied to the package of the annotated class."
+    }
+   },
+   "injection": {
+    "0": {
+     "q": "Why prefer constructor injection?",
+     "a": "Dependencies are explicit and can be <code>final</code>, the object is never half-built, and tests can create it without Spring. Field injection hides dependencies and needs reflection."
+    },
+    "1": {
+     "q": "Two beans of the same type exist. What happens?",
+     "a": "Spring throws <code>NoUniqueBeanDefinitionException</code>. Mark one <code>@Primary</code>, or choose with <code>@Qualifier</code> at the injection point."
+    },
+    "2": {
+     "q": "How do you resolve a circular dependency?",
+     "a": "Redesign: move the shared part into a third bean, or inject one side lazily with <code>@Lazy</code>. Spring Boot rejects circular references by default, which exposes the design problem early."
+    },
+    "3": {
+     "q": "What does @RequiredArgsConstructor do?",
+     "a": "Lombok generates, at compile time, a constructor for the <code>final</code> and <code>@NonNull</code> fields. With a single constructor Spring injects through it without <code>@Autowired</code>."
+    }
+   },
+   "beans": {
+    "0": {
+     "q": "What is the difference between @Component, @Service and @Repository?",
+     "a": "All three register a bean. <code>@Service</code> only names the layer. <code>@Repository</code> also translates persistence exceptions into Spring's <code>DataAccessException</code> hierarchy."
+    },
+    "1": {
+     "q": "What are bean scopes?",
+     "a": "<code>singleton</code> (the default, one per container), <code>prototype</code> (a new one each time), and the web scopes <code>request</code> and <code>session</code>. A singleton must not keep per-request state in its fields."
+    },
+    "2": {
+     "q": "Describe the bean lifecycle.",
+     "a": "Instantiate, inject dependencies, run <code>@PostConstruct</code>, let post-processors wrap the bean in a proxy if needed, use it, then run <code>@PreDestroy</code> on shutdown."
+    },
+    "3": {
+     "q": "When is a singleton bean created?",
+     "a": "Eagerly at startup by default, which is why configuration mistakes show up before the first request. <code>@Lazy</code> delays creation until first use."
+    }
+   },
+   "aop": {
+    "0": {
+     "q": "What is AOP and why use it?",
+     "a": "Aspect-oriented programming moves cross-cutting concerns such as logging, security and transactions out of business code into aspects, applied to methods chosen by pointcuts."
+    },
+    "1": {
+     "q": "How does Spring AOP work?",
+     "a": "At startup Spring replaces matching beans with proxies: a JDK dynamic proxy when there is an interface, a CGLIB subclass otherwise. The proxy runs the advice around the real method."
+    },
+    "2": {
+     "q": "Why does calling this.method() skip @Transactional?",
+     "a": "The call stays inside the object and never passes through the proxy, so no advice runs. Call the method through another bean."
+    },
+    "3": {
+     "q": "What is the difference between Spring AOP and AspectJ?",
+     "a": "Spring AOP is proxy based, so it only advises Spring beans and method calls. AspectJ weaves bytecode at compile or load time, so it can also advise private methods, constructors and objects created with <code>new</code>."
+    }
+   },
+   "boot": {
+    "0": {
+     "q": "What does a starter do?",
+     "a": "It is a dependency that pulls in a curated set of libraries. Auto-configuration then creates beans based on what it finds on the classpath."
+    },
+    "1": {
+     "q": "How does auto-configuration work?",
+     "a": "Boot reads a list of configuration classes, each guarded by conditions such as <code>@ConditionalOnClass</code> and <code>@ConditionalOnMissingBean</code>, and applies the ones whose conditions match."
+    },
+    "2": {
+     "q": "How do you override an auto-configured bean?",
+     "a": "Define your own bean of the same type. Most auto-configuration uses <code>@ConditionalOnMissingBean</code> and backs off."
+    },
+    "3": {
+     "q": "What does the embedded server change?",
+     "a": "The application is a plain jar that starts Tomcat (or Jetty) itself, so you run it with <code>java -jar</code> instead of deploying a war into a server."
+    }
+   },
+   "config": {
+    "0": {
+     "q": "In what order are configuration sources applied?",
+     "a": "Roughly: command-line arguments, then environment variables, then profile-specific files, then the default <code>application.yml</code>. A higher source overrides a lower one."
+    },
+    "1": {
+     "q": "@Value or @ConfigurationProperties?",
+     "a": "<code>@Value</code> injects single values. <code>@ConfigurationProperties</code> binds a whole group into a typed, validated class and accepts relaxed names."
+    },
+    "2": {
+     "q": "What are profiles for?",
+     "a": "Switching configuration and beans per environment, such as dev and prod, with <code>spring.profiles.active</code>."
+    },
+    "3": {
+     "q": "How do you keep secrets out of the repository?",
+     "a": "Read them from environment variables or a secrets manager through placeholders such as <code>${DB_PASSWORD}</code>, and never commit the values."
+    }
+   },
+   "web": {
+    "0": {
+     "q": "@RestController or @Controller?",
+     "a": "<code>@RestController</code> is <code>@Controller</code> plus <code>@ResponseBody</code>, so return values are written as JSON instead of being resolved as view names."
+    },
+    "1": {
+     "q": "@RequestParam, @PathVariable and @RequestBody: what does each read?",
+     "a": "<code>@PathVariable</code> reads the URL path, <code>@RequestParam</code> reads query parameters, and <code>@RequestBody</code> deserialises the request body."
+    },
+    "2": {
+     "q": "Why use DTOs instead of entities in the API?",
+     "a": "They control exactly what the API exposes, keep internal fields and lazy relations out of responses, and let the API and the database change independently."
+    },
+    "3": {
+     "q": "How does request validation work?",
+     "a": "Put <code>@Valid</code> on the body and constraints such as <code>@NotBlank</code> on the DTO. A failure throws <code>MethodArgumentNotValidException</code> before your method runs, usually answered with a 400."
+    }
+   },
+   "errors": {
+    "0": {
+     "q": "How do you handle exceptions for every controller?",
+     "a": "A <code>@RestControllerAdvice</code> class with <code>@ExceptionHandler</code> methods turns exceptions into consistent error responses."
+    },
+    "1": {
+     "q": "Which status codes fit a missing resource, a conflict and bad input?",
+     "a": "404 for not found, 409 for a conflict with the current state, 400 for invalid input, and sometimes 422 for a semantic error."
+    },
+    "2": {
+     "q": "Why should an API not return stack traces?",
+     "a": "They leak internals to attackers. Log the details on the server and return a generic message with a correlation id."
+    },
+    "3": {
+     "q": "What is ProblemDetail?",
+     "a": "Spring's support for RFC 9457 problem details: a standard JSON shape with type, title, status and detail for error responses."
+    }
+   },
+   "data": {
+    "0": {
+     "q": "JdbcTemplate or Spring Data JPA?",
+     "a": "<code>JdbcTemplate</code> runs SQL you write and maps rows yourself. Spring Data JPA generates repositories and queries from interfaces. JDBC gives control, JPA removes boilerplate."
+    },
+    "1": {
+     "q": "RowMapper or ResultSetExtractor?",
+     "a": "A <code>RowMapper</code> maps one row to one object. A <code>ResultSetExtractor</code> receives the whole result set, so you can group joined rows into nested objects."
+    },
+    "2": {
+     "q": "What do @Query and @Param do?",
+     "a": "<code>@Query</code> supplies the JPQL or SQL, and <code>@Param</code> binds a method argument to a named parameter, which also protects against SQL injection."
+    },
+    "3": {
+     "q": "What is a projection?",
+     "a": "A smaller view of an entity, as an interface or a record, so only the columns you need are selected."
+    }
+   },
+   "jpa": {
+    "0": {
+     "q": "What is the persistence context?",
+     "a": "A per-transaction cache of managed entities. It guarantees one instance per row and tracks changes."
+    },
+    "1": {
+     "q": "What is the N+1 problem, and how do you fix it?",
+     "a": "One query loads N parents, then one more per parent loads a lazy child. Fix it with <code>join fetch</code>, an entity graph or batch fetching."
+    },
+    "2": {
+     "q": "What is dirty checking?",
+     "a": "At flush, Hibernate compares managed entities with their loaded state and issues UPDATE statements for any change, without a call to <code>save()</code>."
+    },
+    "3": {
+     "q": "Why do you get LazyInitializationException?",
+     "a": "A lazy relation was read after the session closed. Fetch it inside the transaction, or return a DTO built there."
+    }
+   },
+   "apidocs": {
+    "0": {
+     "q": "What is OpenAPI?",
+     "a": "A language-neutral description of a REST API: paths, parameters and schemas. Tools generate documentation, clients and tests from it."
+    },
+    "1": {
+     "q": "How does springdoc produce the documentation?",
+     "a": "It scans your controllers and types at runtime and serves the OpenAPI document at <code>/v3/api-docs</code>, with Swagger UI drawn on top."
+    },
+    "2": {
+     "q": "What is the benefit and the risk of Spring Data REST?",
+     "a": "It exposes repositories as endpoints with no controller code. The risk is exposing entities directly, so use projections and secure it."
+    },
+    "3": {
+     "q": "What is the difference between contract first and code first?",
+     "a": "Code first generates the spec from the code, which is quick. Contract first writes the spec first and generates code, which suits teams that agree on an API in advance."
+    }
+   },
+   "transactions": {
+    "0": {
+     "q": "What does @Transactional do?",
+     "a": "A proxy begins a transaction before the method and commits after it, or rolls back if a <code>RuntimeException</code> escapes."
+    },
+    "1": {
+     "q": "What is the default rollback behaviour?",
+     "a": "It rolls back on <code>RuntimeException</code> and <code>Error</code>, not on checked exceptions, unless <code>rollbackFor</code> says otherwise."
+    },
+    "2": {
+     "q": "REQUIRED or REQUIRES_NEW?",
+     "a": "<code>REQUIRED</code> joins the current transaction. <code>REQUIRES_NEW</code> suspends it and starts an independent one that commits or fails on its own."
+    },
+    "3": {
+     "q": "Why does @Transactional not work on self-calls or private methods?",
+     "a": "Only calls that arrive through the proxy are intercepted, and a proxy cannot intercept private methods."
+    }
+   },
+   "testing": {
+    "0": {
+     "q": "@SpringBootTest or @WebMvcTest?",
+     "a": "<code>@SpringBootTest</code> starts the whole context. <code>@WebMvcTest</code> loads only the web layer, so it is faster, and you mock the services."
+    },
+    "1": {
+     "q": "What does @DataJpaTest do?",
+     "a": "It starts only the JPA components with an embedded database and rolls back each test."
+    },
+    "2": {
+     "q": "@MockitoBean or a plain Mockito @Mock?",
+     "a": "<code>@MockitoBean</code> replaces a bean in the Spring context with a mock. <code>@Mock</code> creates a mock outside the context, for plain unit tests."
+    },
+    "3": {
+     "q": "Why can Spring tests be slow, and how do you speed them up?",
+     "a": "Each distinct configuration starts a new context. Reuse configuration so Spring can cache contexts, and prefer slice tests and plain unit tests."
+    }
+   },
+   "batch": {
+    "0": {
+     "q": "What are a job, a step and a chunk?",
+     "a": "A job is the whole task, made of steps. A chunk-oriented step reads, processes and writes items in chunks, with one transaction per chunk."
+    },
+    "1": {
+     "q": "What happens when item 7 fails inside a chunk?",
+     "a": "The chunk's transaction rolls back, earlier chunks stay committed, and a restart resumes after the last commit."
+    },
+    "2": {
+     "q": "What does the JobRepository store?",
+     "a": "Job and step executions, counts and the <code>ExecutionContext</code> in <code>BATCH_*</code> tables, which is what makes restart possible."
+    },
+    "3": {
+     "q": "How do skip and retry differ?",
+     "a": "Retry repeats the same item after a transient error. Skip gives up on one item, counts it, and carries on."
+    }
+   },
+   "runtime": {
+    "0": {
+     "q": "How does @Cacheable work?",
+     "a": "A proxy checks the cache by key. On a hit it returns the stored value without running the method. On a miss it calls through and stores the result."
+    },
+    "1": {
+     "q": "What should you know about @Async?",
+     "a": "It runs the method on another thread through a proxy, so self-calls run synchronously, and exceptions need an <code>AsyncUncaughtExceptionHandler</code> or a returned <code>Future</code>."
+    },
+    "2": {
+     "q": "How does @Scheduled behave with several instances?",
+     "a": "Each instance runs its own copy. Use a shared lock such as ShedLock if the job must run only once."
+    },
+    "3": {
+     "q": "What is Actuator for?",
+     "a": "Production endpoints such as health, metrics and info, used by monitoring tools and orchestrators."
+    }
+   },
+   "troubleshooting": {
+    "0": {
+     "q": "NoSuchBeanDefinitionException: what do you check first?",
+     "a": "Is the class annotated, is it inside the scanned package, and is the right profile active?"
+    },
+    "1": {
+     "q": "How do you read a long stack trace?",
+     "a": "From the bottom. The last <code>Caused by</code> is the root cause, and the top only shows where Spring gave up."
+    },
+    "2": {
+     "q": "The app fails with Failed to configure a DataSource. What now?",
+     "a": "There is no url or driver. Check <code>spring.datasource.*</code>, that the driver dependency is on the classpath, and that the database is reachable."
+    },
+    "3": {
+     "q": "A field is null in a class you created with new. Why?",
+     "a": "Spring only injects beans it creates. An object built with <code>new</code> gets nothing injected, so ask the container for it instead."
+    }
+   },
+   "security": {
+    "0": {
+     "q": "What is the difference between authentication and authorization?",
+     "a": "Authentication proves who you are. Authorization decides what you may do."
+    },
+    "1": {
+     "q": "What is the difference between 401 and 403?",
+     "a": "401 means not authenticated: the caller is unknown. 403 means authenticated but not allowed."
+    },
+    "2": {
+     "q": "What is the security filter chain?",
+     "a": "An ordered list of servlet filters, built from a <code>SecurityFilterChain</code> bean, that every request passes through before it reaches a controller."
+    },
+    "3": {
+     "q": "Why use PKCE?",
+     "a": "Public clients such as single-page apps cannot keep a secret. PKCE proves that the app that started the authorization code flow is the one finishing it."
+    }
+   },
+   "tools": {
+    "0": {
+     "q": "When does Lombok generate its code?",
+     "a": "At compile time, inside <code>javac</code>, so the <code>.class</code> files already contain it. There is no runtime cost."
+    },
+    "1": {
+     "q": "Why avoid @Data on JPA entities?",
+     "a": "The generated <code>equals</code>, <code>hashCode</code> and <code>toString</code> can trigger lazy loading or loop through bidirectional relations."
+    },
+    "2": {
+     "q": "What is the advantage of MapStruct over reflection-based mappers?",
+     "a": "It generates plain mapping code at compile time, so it is fast and mapping mistakes show up at build time."
+    },
+    "3": {
+     "q": "How do you get a MapStruct mapper as a Spring bean?",
+     "a": "Set <code>componentModel = \"spring\"</code> on <code>@Mapper</code>, then inject it like any bean."
+    }
+   },
+   "patterns": {
+    "0": {
+     "q": "Which design patterns does Spring use?",
+     "a": "Singleton (bean scope), Proxy (AOP), Template Method (<code>JdbcTemplate</code>), Front Controller (<code>DispatcherServlet</code>), Observer (events), Strategy, Builder, and Chain of Responsibility (filters)."
+    },
+    "1": {
+     "q": "Why is the DispatcherServlet a Front Controller?",
+     "a": "One entry point receives every request and chooses the handler, so shared handling lives in one place."
+    },
+    "2": {
+     "q": "How does Template Method show up in JdbcTemplate?",
+     "a": "It owns the fixed skeleton (connection, statement, cleanup) and calls your callback for the part that varies."
+    },
+    "3": {
+     "q": "How is a Spring singleton different from the classic singleton pattern?",
+     "a": "It is one instance per container, not per JVM or classloader, and the class itself is not forced to be a singleton."
+    }
+   },
+   "capstone": {
+    "0": {
+     "q": "Walk a POST /orders request through the layers.",
+     "a": "The security filter authenticates, <code>DispatcherServlet</code> picks the controller, validation checks the DTO, a transactional service saves through the repository, and the controller returns a response DTO."
+    },
+    "1": {
+     "q": "Where does each failure become an HTTP status?",
+     "a": "No token: 401 in the security filters. Invalid body: 400 from validation. Missing data: 404 from an exception handler. Anything unexpected: 500 from a catch-all advice."
+    },
+    "2": {
+     "q": "Where should the transaction boundary be?",
+     "a": "On the service method that represents one business operation, not on controllers or repositories."
+    },
+    "3": {
+     "q": "Why map entities to DTOs?",
+     "a": "So the API shape and the database can evolve separately, and internal fields never leak."
+    }
+   },
+   "cloud": {
+    "0": {
+     "q": "What does an API gateway do?",
+     "a": "It is a single entry point that routes requests to services and applies cross-cutting concerns such as authentication, rate limiting and logging."
+    },
+    "1": {
+     "q": "How does service discovery work?",
+     "a": "Services register their name and address with a registry and send heartbeats. Callers look a name up and cache the instances."
+    },
+    "2": {
+     "q": "Explain the circuit breaker states.",
+     "a": "CLOSED passes calls and counts failures. OPEN fails fast with a fallback. HALF_OPEN lets trial calls through and closes again if they succeed."
+    },
+    "3": {
+     "q": "Do you always need Spring Cloud?",
+     "a": "No. Kubernetes already provides discovery and configuration, and a modular monolith avoids distribution problems entirely."
+    }
+   },
+   "messaging": {
+    "0": {
+     "q": "Why use messaging instead of REST between services?",
+     "a": "It decouples sender and receiver in time and availability, allows many consumers without changing the sender, and keeps events for replay."
+    },
+    "1": {
+     "q": "What is a consumer group?",
+     "a": "Consumers with the same group id share a topic's partitions, each partition going to one member, which spreads the work."
+    },
+    "2": {
+     "q": "How do you keep events in order?",
+     "a": "Order is kept within a partition, so give related events the same key. There is no order across partitions."
+    },
+    "3": {
+     "q": "What is the outbox pattern?",
+     "a": "Write the event to a table in the same database transaction as the data, and let a relay publish it later, so the two can never disagree."
+    }
+   }
   }
  },
  "ui": {
@@ -6049,7 +7193,9 @@
     "Advanced": "Advanced"
    },
    "quickCheck": "Quick check",
-   "questions": "{n} questions"
+   "questions": "{n} questions",
+   "interview": "Interview questions",
+   "interviewHint": "Open a question, answer it in your head, then read the model answer."
   },
   "quiz": {
    "title": "Quick check",
@@ -6077,7 +7223,7 @@
     "leaves": {
      "name": "Leaves",
      "sub": "Modules you plug in",
-     "note": "Cloud, Integration, Kafka and AMQP, WebFlux and Session are not covered yet."
+     "note": "Integration, AMQP, WebFlux and Session are not covered yet."
     },
     "stem": {
      "name": "Stem",
@@ -6119,7 +7265,10 @@
     "apidocs": "API docs and Data REST",
     "troubleshooting": "Troubleshooting",
     "compare": "Spring vs other stacks",
-    "aop": "AOP"
+    "aop": "AOP",
+    "cloud": "Spring Cloud",
+    "messaging": "Kafka and messaging",
+    "project": "Build it yourself"
    },
    "table": {
     "head": [
@@ -6241,7 +7390,9 @@
    "styleHairline": "Hairline",
    "styleHint": "Switch the node drawing: blocks or Hairline figures",
    "copyLink": "Copy a link to this step",
-   "linkCopied": "Link copied"
+   "linkCopied": "Link copied",
+   "copyEmbed": "Copy embed code for this step",
+   "embedCopied": "Embed code copied"
   },
   "beans": {
    "next": "Next step",
@@ -6446,6 +7597,15 @@
     "d": "A compile-time tool that generates the code that maps one class to another.",
     "topic": "tools"
    }
+  },
+  "embed": {
+   "from": "Open on Spring Explorer"
+  },
+  "project": {
+   "mark": "Mark this step as done",
+   "done": "Done",
+   "progress": "{done} of {total} steps done",
+   "reset": "Start over"
   }
  }
 }

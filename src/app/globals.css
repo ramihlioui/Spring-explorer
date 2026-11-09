@@ -632,3 +632,29 @@ svg.moving .glab{opacity:0}
 .term-card b{font-family:var(--display);font-size:15px;color:var(--fg-strong)}
 .term-card .link{font-size:13.5px;width:fit-content}
 @media (prefers-reduced-motion:reduce){.term-card{animation:none}}
+
+/* embed */
+.embed{padding:12px;min-height:100vh}
+.embed .seq{margin-top:0}
+.embed-foot{margin-top:10px;font-size:13px;text-align:right}
+.embed-foot a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.embed-foot a:hover{color:var(--accent)}
+
+/* interview questions */
+.qa{margin-top:var(--space-2);border-bottom:1px solid var(--line)}
+.qa details{border-top:1px solid var(--line)}
+.qa summary{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);padding:16px 0;cursor:pointer;list-style:none;font-weight:500;color:var(--fg-strong);font-size:16.5px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;font-weight:400;font-size:20px;line-height:1;color:var(--muted);transition:transform .25s var(--spring)}
+.qa details[open] summary::after{transform:rotate(45deg);color:var(--accent)}
+.qa summary:hover{color:var(--accent)}
+.qa-a{padding:0 0 18px;max-width:72ch;color:var(--fg)}
+
+/* guided project */
+.prj-done{margin-top:var(--space-3)}
+.prj-done .btn[aria-pressed="true"]{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.prj-progress{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-3);margin-top:var(--space-3)}
+.prj-dots{display:flex;gap:8px}
+.prj-dots span{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--edge);transition:background .3s var(--spring),border-color .3s,transform .3s var(--spring)}
+.prj-dots span.on{background:var(--accent);border-color:var(--accent);transform:scale(1.1)}
+.prj-count{font-variant-numeric:tabular-nums;color:var(--fg-strong);font-weight:500}

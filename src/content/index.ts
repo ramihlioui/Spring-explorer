@@ -13,6 +13,7 @@ import readJson from "@/content/read.json";
 import simsJson from "@/content/sims.json";
 import patsJson from "@/content/pats.json";
 import codeJson from "@/content/code.json";
+import interviewJson from "@/content/interview.json";
 
 /** Every text field below is a message key ("c.…"), resolved with the visitor's locale. */
 export interface Flow {
@@ -41,6 +42,8 @@ export type Node =
   | { t: "code"; id: string }
   | { t: "explorer"; id: string }
   | { t: "sim"; name: string }
+  | { t: "done"; id: string }
+  | { t: "progress"; ids: string[] }
   | { t: "flow"; boxes: { b: string; small: string }[] }
   | { t: "tree"; rows: { cls: string; code: string; html: string }[] };
 export interface View {
@@ -67,4 +70,5 @@ export const read = readJson as Record<string, { n: string; url: string }[]>;
 export const sims = simsJson as any;
 export const pats = patsJson as { k: string; name: string; cat: string; where: string }[];
 export const code = codeJson as Record<string, string>;
+export const interview = interviewJson as Record<string, { q: string; a: string }[]>;
 export const topicIds = topics.filter((t) => t.id !== "start").map((t) => t.id);

@@ -176,6 +176,7 @@ export function createExplorer(
          <span class="count" data-r="count"></span>
          <select id="${rootId}-spd" aria-label="${esc(U("speed"))}"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option></select>
          <button class="iconbtn" data-a="link" aria-label="${esc(U("copyLink"))}" title="${esc(U("copyLink"))}">${ICON("copy")}</button>
+         <button class="iconbtn" data-a="embed" aria-label="${esc(U("copyEmbed"))}" title="${esc(U("copyEmbed"))}">${ICON("embed")}</button>
          <button class="iconbtn" data-a="reset" aria-label="${esc(U("reset"))}" title="${esc(U("resetHint"))}">${ICON("reset")}</button>
        </div>
      </div>
@@ -701,7 +702,20 @@ export function createExplorer(
         go(0);
       } else if (act === "play") toggle();
       else if (act === "predict") togglePredict();
-      else if (act === "link") {
+      else if (act === "embed") {
+        const lang = document.documentElement.lang || "en";
+        const src = `${location.origin}/${lang}/embed/${rootId}?${rootId}=${key}.${cur}`;
+        const code = `<iframe src="${src}" width="100%" height="640" style="border:0" loading="lazy" title="Spring Explorer"></iframe>`;
+        const done = (ok: boolean) => {
+          a.innerHTML = ICON(ok ? "check" : "embed");
+          a.title = ok ? U("embedCopied") : U("copyEmbed");
+          setTimeout(() => {
+            a.innerHTML = ICON("embed");
+            a.title = U("copyEmbed");
+          }, 1400);
+        };
+        navigator.clipboard.writeText(code).then(() => done(true), () => done(false));
+      } else if (act === "link") {
         const u = new URL(location.href);
         u.searchParams.delete("go");
         u.searchParams.set(rootId, `${key}.${cur}`);
